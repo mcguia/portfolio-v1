@@ -1,42 +1,18 @@
-import React from "react";
-import { StaticQuery, graphql } from "gatsby";
+import React from 'react';
+import { Layout } from '@components';
+import { mixins, Main } from '@styles';
+import styled from 'styled-components';
+
+const MainContainer = styled(Main)`
+    ${mixins.sidePadding};
+`;
 
 const HomePage = () => (
-  <StaticQuery
-    query={graphql`
-      query HomePage {
-        contentfulHomePage {
-          title
-          date
-          content {
-            content
-          }
-          image {
-            file {
-              url
-            }
-          }
-        }
-      }
-    `}
-    render={({
-      contentfulHomePage: {
-        title,
-        date,
-        content: { content },
-        image: {
-          file: { url }
-        }
-      }
-    }) => (
-      <>
-        <h1>{title}</h1>
-        <small>Created on {date}</small>
-        <img src={url} />
-        <p>{content}</p>
-      </>
-    )}
-  />
+    <Layout>
+        <MainContainer id="content">
+            {"test"}
+        </MainContainer>
+    </Layout>
 );
 
 export default HomePage;
