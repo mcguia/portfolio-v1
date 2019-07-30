@@ -1,9 +1,12 @@
 import React, { Fragment } from 'react';
-
+import { GlobalStyle } from '@styles';
 
 const Layout = ({ children }) => (
     <Fragment>
-        {children}
+        <div id="root">
+            <GlobalStyle />
+            {children}
+        </div>
     </Fragment>
 
 );

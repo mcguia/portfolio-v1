@@ -10,7 +10,8 @@ const MainContainer = styled(Main)`
 const HomePage = () => (
     <Layout>
         <MainContainer id="content">
-            {"test"}
+            <h1>{"test"}</h1>
+            {"test test test"}
         </MainContainer>
     </Layout>
 );
