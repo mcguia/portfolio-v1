@@ -1,15 +1,69 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-import { Section } from '@styles';
+import { media, Section, theme } from '@styles';
+const { fontSizes } = theme;
 
 const LandingContainer = styled(Section)`
     position: relative;
+    @media ${media.md} {
+        padding: 15em 0;
+    }
+`;
+
+const Hello = styled.h1`
+    @media ${media.md} {
+        font-size: ${fontSizes.lg};
+    }
+    @media ${media.lg} {
+        font-size: ${fontSizes.xl};
+    }
+    @media ${media.xl} {
+        font-size: ${fontSizes.xxl};
+    }
+
+`;
+
+const Subtitle = styled.div`
+    @media ${media.md} {
+        font-size: ${fontSizes.xs};
+    }
+    @media ${media.lg} {
+        font-size: ${fontSizes.sm};
+    }
+    @media ${media.xl} {
+        font-size: ${fontSizes.sm};
+    }
 `;
 
 const Landing = () => (
     <LandingContainer id="landing">
-        <h1>Hi, I'm Austin.</h1>
-        <div>I'm a software engineer with a knack for front end development and design.</div>
+        <StaticQuery
+            query={graphql`
+                query InfoQuery {
+                    contentfulInfo {
+                        firstName
+                        lastName
+                        aboutShort
+                        socials {
+                            email
+                            gitlab
+                            linkedIn
+                        }
+                    }
+                }
+            `}
+            render={data => {
+                const { aboutShort, firstName } = data.contentfulInfo;
+
+                return (
+                    <Fragment>
+                        <Hello>{`Hi, I'm ${firstName}.`}</Hello>
+                        <Subtitle>{`${aboutShort}`}</Subtitle>
+                    </Fragment>
+                );
+            }}
+        />
     </LandingContainer>
 );
 

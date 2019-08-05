@@ -6,7 +6,6 @@ import { SectionLinks } from 'react-scroll-section';
 
 const HeaderContainer = styled(Headroom)`
     position: absolute;
-    width: 100%;
     margin-top: 2em;
 `;
 

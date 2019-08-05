@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Landing, Layout } from '@components';
+import { Header, Landing, Layout, Projects } from '@components';
 import { mixins, Main } from '@styles';
 import styled from 'styled-components';
 
@@ -12,6 +12,7 @@ const HomePage = () => (
         <MainContainer id="content">
             <Header />
             <Landing />
+            <Projects />
         </MainContainer>
     </Layout>
 );

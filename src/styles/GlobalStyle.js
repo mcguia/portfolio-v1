@@ -147,6 +147,7 @@ const GlobalStyle = createGlobalStyle`
         min-height: 100%;
         -webkit-font-smoothing: antialiased;
         font-family: ${fonts.Lato};
+        color: #202020;
     }
 
     h1,
@@ -157,6 +158,7 @@ const GlobalStyle = createGlobalStyle`
         font-weight: 600;
         -webkit-font-smoothing: antialiased;
         font-family: ${fonts.HKGrotesk};
+        color: #202020;
     }
 
 `;
