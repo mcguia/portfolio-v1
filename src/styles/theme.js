@@ -7,6 +7,8 @@ const theme = {
         HKGrotesk:
           'HK Grotesk, San Francisco, SF Pro Text, -apple-system, system-ui, BlinkMacSystemFont, Roboto, Helvetica Neue, Segoe UI, Arial, sans-serif',
         Lato: 'Lato, Lucida Grande, Tahoma, sans-serif',
+        ApercuRegular: 'Apercu Regular, Lucida Grande, Tahoma, sans-serif',
+        ApercuMono: 'Apercu Mono, Monaco, monospace',
     },
 
     fontSizes: {

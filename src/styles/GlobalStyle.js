@@ -130,6 +130,21 @@ const GlobalStyle = createGlobalStyle`
         font-style: italic;
         font-display: auto;
     }
+    @font-face {
+        font-family: 'Apercu Regular';
+        src: url(${fontFamilies.ApercuRegularOTF}) format('opentype');
+        font-weight: regular;
+        font-style: normal;
+        font-display: auto;
+    }
+    @font-face {
+        font-family: 'Apercu Mono';
+        src: url(${fontFamilies.ApercuMonoOTF}) format('opentype');
+        font-weight: regular;
+        font-style: normal;
+        font-display: auto;
+    }
+
     html {
         box-sizing: border-box;
         width: 100%;

@@ -1,26 +1,16 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-import { media, Section, theme } from '@styles';
+import { Header, media, Section, theme } from '@styles';
 const { fontSizes } = theme;
 
-const AboutContainer = styled(Section)`
-`;
-
-const AboutHeader = styled.h1`
-    @media ${media.md} {
-        font-size: ${fontSizes.xl};
-    }
-    @media ${media.lg} {
-        font-size: ${fontSizes.xxl};
-    }
-
-    margin-top: 0;
+const InfoContainer = styled(Section)`
 `;
 
 const AboutRow = styled.div`
     @media ${media.md} {
         display: flex;
+        flex-direction: row-reverse;
     }
     align-items: center;
 `;
@@ -33,11 +23,12 @@ const AboutColumn = styled.div`
 `;
 
 const AboutImage = styled.div`
-    min-height: 560px;
-    @media (min-width: 1272px) {
+    @media ${media.xl} {
         background-image: url( ${props => props.image1} );
+        min-height: 560px;
     }
     background-image: url( ${props => props.image2} );
+    min-height: 280px;
     background-position: center center;
     background-repeat: no-repeat;
 
@@ -56,7 +47,7 @@ const AboutIntro = styled.div`
 `;
 
 const About = () => (
-    <AboutContainer id="about-info">
+    <InfoContainer id="about-info">
         <StaticQuery
             query={graphql`
                 query AboutInfoQuery {
@@ -81,21 +72,19 @@ const About = () => (
                 const { intro, image1, image2 } = data.contentfulAbout;
 
                 return (
-                    <AboutContainer>
-                        <AboutRow>
-                            <AboutColumn>
-                                <AboutHeader>About</AboutHeader>
-                                <AboutIntro dangerouslySetInnerHTML={{ __html: intro.intro }}></AboutIntro>
-                            </AboutColumn>
-                            <AboutColumn>
-                                <AboutImage image1={image1.file.url} image2={image2.file.url}/>
-                            </AboutColumn>
-                        </AboutRow>
-                    </AboutContainer>
+                    <AboutRow>
+                        <AboutColumn>
+                            <AboutImage image1={image1.file.url} image2={image2.file.url}/>
+                        </AboutColumn>
+                        <AboutColumn>
+                            <Header>About</Header>
+                            <AboutIntro dangerouslySetInnerHTML={{ __html: intro.intro }}></AboutIntro>
+                        </AboutColumn>
+                    </AboutRow>
                 );
             }}
         />
-    </AboutContainer>
+    </InfoContainer>
 );
 
 export default About;

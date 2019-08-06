@@ -41,11 +41,8 @@ const Nav = styled.nav`
 `;
 
 const NavLinks = styled.div`
-    display: none;
     align-items: center;
-    @media ${media.md} {
-        display: flex;
-    }
+    display: flex;
 `;
 
 const NavList = styled.ul`

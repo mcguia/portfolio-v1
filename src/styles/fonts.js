@@ -42,6 +42,9 @@ import LatoSemiboldItalicTTF from '@fonts/Lato/Lato-SemiboldItalic.ttf';
 import LatoSemiboldItalicWOFF from '@fonts/Lato/Lato-SemiboldItalic.woff';
 import LatoSemiboldItalicWOFF2 from '@fonts/Lato/Lato-SemiboldItalic.woff2';
 
+import ApercuRegularOTF from '@fonts/Apercu/Apercu-Regular.otf';
+import ApercuMonoOTF from '@fonts/Apercu/Apercu-Mono.otf';
+
 export {
   HKGroteskLightTTF,
   HKGroteskLightWOFF,
@@ -86,4 +89,7 @@ export {
   LatoSemiboldItalicTTF,
   LatoSemiboldItalicWOFF,
   LatoSemiboldItalicWOFF2,
+
+  ApercuRegularOTF,
+  ApercuMonoOTF,
 };
