@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
+import { Link } from 'gatsby';
 import Headroom from 'react-headroom';
 import styled from 'styled-components';
+import { SectionLinks } from 'react-scroll-section';
 import { theme, mixins, media } from '@styles';
 import { throttle } from '@utils';
 const { fontSizes, fonts } = theme;
 
 
 const NavContainer = styled(Headroom)`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
+    .headroom--pinned {
+        background: #fff;
+    }
+
+    position: absolute;
     top: 0;
     width: 100%;
-    margin-top: 2em;
     z-index: 11;
     height: 70px;
-
 `;
 
 const Nav = styled.nav`
@@ -27,7 +28,16 @@ const Nav = styled.nav`
     width: 100%;
     font-family: ${fonts.HKGrotesk};
     z-index: 12;
-        background-color: #fff;
+    padding: .5em 1.2em;
+    @media ${media.md} {
+        padding: .5em 3em;
+    }
+    @media ${media.lg} {
+        padding: .5em 5em;
+    }
+    @media ${media.xl} {
+        padding: .5em 9.375em;
+    }
 `;
 
 const NavLinks = styled.div`
@@ -42,13 +52,21 @@ const NavList = styled.ul`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    list-style: none;
 `;
 
 const NavListItem = styled.li`
     margin: 0 .8em;
     position: relative;
     font-size: ${fontSizes.sm};
+    font-weight: 500;
+`;
+
+const Logo = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: ${fontSizes.sm};
+    font-weight: 600;
 `;
 
 
@@ -93,6 +111,9 @@ class Navbar extends Component {
         return (
             <NavContainer>
                 <Nav>
+                    <Logo>
+                        <Link to={'/'}>Austin McGuire</Link>
+                    </Logo>
                     <NavLinks>
                         <NavList>
                             {menuLinks &&

@@ -12,15 +12,14 @@ const LandingContainer = styled(Section)`
 `;
 
 const Hello = styled.h1`
-    @media ${media.md} {
-        font-size: ${fontSizes.lg};
-    }
+
     @media ${media.lg} {
         font-size: ${fontSizes.xl};
     }
     @media ${media.xl} {
         font-size: ${fontSizes.xxl};
     }
+    font-size: ${fontSizes.lg};
 
 `;
 
@@ -47,11 +46,6 @@ const Landing = () => (
                         firstName
                         lastName
                         aboutShort
-                        socials {
-                            email
-                            gitlab
-                            linkedIn
-                        }
                     }
                 }
             `}

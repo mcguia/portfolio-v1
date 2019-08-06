@@ -151,6 +151,19 @@ const GlobalStyle = createGlobalStyle`
         line-height: 2;
     }
 
+    a {
+        text-decoration: none;
+        color: inherit;
+        position: relative;
+        cursor: pointer;
+    }
+
+    ul, ol {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
     h1,
     h2,
     h3,

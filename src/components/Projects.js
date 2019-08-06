@@ -56,9 +56,6 @@ const ProjectType = styled.h5`
     font-size: ${fontSizes.xs};
 `;
 
-const StyledLink = styled(props => <Link {...props} />)`
-    text-decoration: none;
-`;
 
 const Projects = () => (
     <ProjectsContainer id="landing">
@@ -96,13 +93,13 @@ const Projects = () => (
                     {Projects.map(({ node: project }) => (
                         <ProjectsRow key={project.id}>
                             <ProjectsColumn>
-                                <StyledLink to={`/project/${project.slug}`}>
+                                <Link to={`/project/${project.slug}`}>
                                     <Img fluid={project.image.fluid} imgStyle={{position: "relative"}}/>
                                     <Description>
                                         <ProjectType>{project.type}</ProjectType>
                                         <ProjectName>{project.title}</ProjectName>
                                     </Description>
-                                </StyledLink>
+                                </Link>
                             </ProjectsColumn>
                             <ProjectsColumn />
                         </ProjectsRow>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { About, Layout } from '@components';
+import { About, Footer, Layout } from '@components';
 import { mixins, Main } from '@styles';
 import styled from 'styled-components';
 
@@ -11,6 +11,7 @@ const AboutPage = () => (
     <Layout>
         <AboutContainer id="content">
             <About />
+            <Footer />
         </AboutContainer>
     </Layout>
 );

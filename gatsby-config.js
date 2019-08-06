@@ -10,15 +10,15 @@ const { spaceId, accessToken } = process.env;
 module.exports = {
     siteMetadata: {
         menuLinks:[{
-            name:'Work',
+            name:'work',
             link:'/'
         },
         {
-            name:'About',
+            name:'about',
             link:'/about'
         },
         {
-            name:'Contact',
+            name:'contact',
             link:'/contact'
         }]
     },
