@@ -25,6 +25,8 @@ const Hello = styled.h1`
 `;
 
 const Subtitle = styled.div`
+    max-width: 25em;
+
     @media ${media.md} {
         font-size: ${fontSizes.xs};
     }
@@ -32,7 +34,7 @@ const Subtitle = styled.div`
         font-size: ${fontSizes.sm};
     }
     @media ${media.xl} {
-        font-size: ${fontSizes.sm};
+        font-size: ${fontSizes.md};
     }
 `;
 

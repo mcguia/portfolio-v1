@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 import Img from 'gatsby-image';

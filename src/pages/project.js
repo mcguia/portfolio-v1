@@ -4,12 +4,12 @@ import Layout from '../components/Layout';
 import Img from 'gatsby-image';
 
 
-const Project = ({ data }) => {
+const ProjectPage = ({ data }) => {
   const { title, content, image } = data.contentfulProject;
   return (
     <Layout>
 
-      <div className="blogpost">
+      <div className="project">
         <h1>{title}</h1>
         <Img alt={title} fluid={image.fluid} imgStyle={{position: "relative"}}/>
 
@@ -19,7 +19,7 @@ const Project = ({ data }) => {
     </Layout>
   );
 };
-export default Project;
+export default ProjectPage;
 
 export const pageQuery = graphql`
   query($slug: String!) {

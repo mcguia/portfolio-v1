@@ -16,12 +16,12 @@ import HKGroteskMediumWOFF2 from '@fonts/HKGrotesk/HKGrotesk-Medium.woff2';
 import HKGroteskMediumItalicTTF from '@fonts/HKGrotesk/HKGrotesk-MediumItalic.ttf';
 import HKGroteskMediumItalicWOFF from '@fonts/HKGrotesk/HKGrotesk-MediumItalic.woff';
 import HKGroteskMediumItalicWOFF2 from '@fonts/HKGrotesk/HKGrotesk-MediumItalic.woff2';
-import HKGroteskSemiboldTTF from '@fonts/HKGrotesk/HKGrotesk-Semibold.ttf';
-import HKGroteskSemiboldWOFF from '@fonts/HKGrotesk/HKGrotesk-Semibold.woff';
-import HKGroteskSemiboldWOFF2 from '@fonts/HKGrotesk/HKGrotesk-Semibold.woff2';
-import HKGroteskSemiboldItalicTTF from '@fonts/HKGrotesk/HKGrotesk-SemiboldItalic.ttf';
-import HKGroteskSemiboldItalicWOFF from '@fonts/HKGrotesk/HKGrotesk-SemiboldItalic.woff';
-import HKGroteskSemiboldItalicWOFF2 from '@fonts/HKGrotesk/HKGrotesk-SemiboldItalic.woff2';
+import HKGroteskBoldTTF from '@fonts/HKGrotesk/HKGrotesk-Bold.ttf';
+import HKGroteskBoldWOFF from '@fonts/HKGrotesk/HKGrotesk-Bold.woff';
+import HKGroteskBoldWOFF2 from '@fonts/HKGrotesk/HKGrotesk-Bold.woff2';
+import HKGroteskBoldItalicTTF from '@fonts/HKGrotesk/HKGrotesk-BoldItalic.ttf';
+import HKGroteskBoldItalicWOFF from '@fonts/HKGrotesk/HKGrotesk-BoldItalic.woff';
+import HKGroteskBoldItalicWOFF2 from '@fonts/HKGrotesk/HKGrotesk-BoldItalic.woff2';
 
 import LatoRegularTTF from '@fonts/Lato/Lato-Regular.ttf';
 import LatoRegularWOFF from '@fonts/Lato/Lato-Regular.woff';
@@ -61,12 +61,13 @@ export {
   HKGroteskMediumItalicTTF,
   HKGroteskMediumItalicWOFF,
   HKGroteskMediumItalicWOFF2,
-  HKGroteskSemiboldTTF,
-  HKGroteskSemiboldWOFF,
-  HKGroteskSemiboldWOFF2,
-  HKGroteskSemiboldItalicTTF,
-  HKGroteskSemiboldItalicWOFF,
-  HKGroteskSemiboldItalicWOFF2,
+  HKGroteskBoldTTF,
+  HKGroteskBoldWOFF,
+  HKGroteskBoldWOFF2,
+  HKGroteskBoldItalicTTF,
+  HKGroteskBoldItalicWOFF,
+  HKGroteskBoldItalicWOFF2,
+
   LatoRegularTTF,
   LatoRegularWOFF,
   LatoRegularWOFF2,

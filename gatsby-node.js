@@ -16,6 +16,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
         '@components': path.resolve(__dirname, 'src/components'),
         '@fonts': path.resolve(__dirname, 'src/fonts'),
         '@styles': path.resolve(__dirname, 'src/styles'),
+        '@utils': path.resolve(__dirname, 'src/utils'),
       },
     },
   });
@@ -24,7 +25,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
 
 const slash = require(`slash`);
 exports.createPages = ({ graphql, actions }) => {
-    const { createPage } = actions;
+const { createPage } = actions;
 
   return graphql(
     `

@@ -1,13 +1,20 @@
-import Layout from '../components/Layout';
-import Header from '../components/Header';
-import Landing from '../components/Landing';
-import Projects from '../components/Projects';
+import About from '../components/About';
+import Experience from '../components/Experience';
 import Footer from '../components/Footer';
+import Layout from '../components/Layout';
+import Landing from '../components/Landing';
+import Navbar from '../components/Navbar';
+import Projects from '../components/Projects';
+import Skills from '../components/Skills';
+
 
 export {
-    Layout,
-    Header,
-    Landing,
-    Projects,
+    About,
+    Experience,
     Footer,
+    Landing,
+    Layout,
+    Projects,
+    Navbar,
+    Skills,
 };

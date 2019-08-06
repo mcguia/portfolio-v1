@@ -8,7 +8,21 @@ const { spaceId, accessToken } = process.env;
 
 
 module.exports = {
-  plugins: [
+    siteMetadata: {
+        menuLinks:[{
+            name:'Work',
+            link:'/'
+        },
+        {
+            name:'About',
+            link:'/about'
+        },
+        {
+            name:'Contact',
+            link:'/contact'
+        }]
+    },
+    plugins: [
     "gatsby-transformer-remark",
     "gatsby-plugin-styled-components",
     {
@@ -17,6 +31,5 @@ module.exports = {
             spaceId,
             accessToken
         }
-    }
-  ]
+    }]
 };

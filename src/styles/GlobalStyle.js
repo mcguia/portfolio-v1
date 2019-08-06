@@ -60,18 +60,18 @@ const GlobalStyle = createGlobalStyle`
     }
     @font-face {
         font-family: 'HK Grotesk';
-        src: url(${fontFamilies.HKGroteskSemiboldWOFF2}) format('woff2'),
-        url(${fontFamilies.HKGroteskSemiboldWOFF}) format('woff'),
-        url(${fontFamilies.HKGroteskSemiboldTTF}) format('truetype');
+        src: url(${fontFamilies.HKGroteskBoldWOFF2}) format('woff2'),
+        url(${fontFamilies.HKGroteskBoldWOFF}) format('woff'),
+        url(${fontFamilies.HKGroteskBoldTTF}) format('truetype');
         font-weight: 600;
         font-style: normal;
         font-display: auto;
     }
     @font-face {
         font-family: 'HK Grotesk';
-        src: url(${fontFamilies.HKGroteskSemiboldItalicWOFF2}) format('woff2'),
-        url(${fontFamilies.HKGroteskSemiboldItalicWOFF}) format('woff'),
-        url(${fontFamilies.HKGroteskSemiboldItalicTTF}) format('truetype');
+        src: url(${fontFamilies.HKGroteskBoldItalicWOFF2}) format('woff2'),
+        url(${fontFamilies.HKGroteskBoldItalicWOFF}) format('woff'),
+        url(${fontFamilies.HKGroteskBoldItalicTTF}) format('truetype');
         font-weight: 600;
         font-style: italic;
         font-display: auto;
@@ -148,6 +148,7 @@ const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         font-family: ${fonts.Lato};
         color: #202020;
+        line-height: 2;
     }
 
     h1,
