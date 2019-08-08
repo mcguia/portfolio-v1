@@ -19,8 +19,8 @@ module.exports = {
         }]
     },
     plugins: [
-    "gatsby-transformer-remark",
     "gatsby-plugin-styled-components",
+    "gatsby-transformer-remark",
     {
         resolve: "gatsby-source-contentful",
         options: {

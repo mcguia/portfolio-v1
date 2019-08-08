@@ -28,7 +28,7 @@ const ProjectsColumn = styled.div`
 
 const Description = styled.div`
     justify-content: center;
-    padding: 3em 0;
+    padding: 2.5em 0 3em 0;
 `;
 
 const ProjectName = styled.h4`
@@ -58,7 +58,7 @@ const ProjectType = styled.h5`
 
 
 const Projects = () => (
-    <ProjectsContainer id="landing">
+    <ProjectsContainer id="projects">
         <StaticQuery
             query={graphql`
                 query ProjectsQuery {
@@ -69,10 +69,7 @@ const Projects = () => (
                         title
                         type
                         slug
-                        content {
-                          content
-                        }
-                        image {
+                        featuredImage {
                           fluid {
                             srcSet
                             src
@@ -94,7 +91,7 @@ const Projects = () => (
                         <ProjectsRow key={project.id}>
                             <ProjectsColumn>
                                 <Link to={`/project/${project.slug}`}>
-                                    <Img fluid={project.image.fluid} imgStyle={{position: "relative"}}/>
+                                    <Img fluid={project.featuredImage.fluid} imgStyle={{position: "relative"}}/>
                                     <Description>
                                         <ProjectType>{project.type}</ProjectType>
                                         <ProjectName>{project.title}</ProjectName>
