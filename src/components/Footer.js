@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import { Link, StaticQuery, graphql } from 'gatsby';
 import Headroom from 'react-headroom';
 import styled from 'styled-components';
@@ -68,13 +68,19 @@ const Footer = () => (
                 }
             `}
             render={data => {
+                const [isMounted, setIsMounted] = useState(false);
+                useEffect(() => {
+                    const timeout = setTimeout(() => setIsMounted(true), 1500);
+                    return () => clearTimeout(timeout);
+                }, []);
                 const Socials = data.allContentfulSocial.edges;
 
                 return (
                     <FooterContainer id="footer">
-                        <Logo>
+                        {isMounted && <Logo>
                             <Link to={'/'}>Austin McGuire</Link>
-                        </Logo>
+                        </Logo>}
+                        {isMounted &&
                         <FooterLinks>
                             <FooterList>
                                 {
@@ -84,7 +90,7 @@ const Footer = () => (
                                     </FooterListItem>
                                 ))}
                             </FooterList>
-                        </FooterLinks>
+                        </FooterLinks>}
                     </FooterContainer>
                 );
             }}

@@ -3,18 +3,29 @@ import media from './media';
 
 
 const mixins = {
-  sidePadding: css`
-    padding: 0 1.2em;
+  sideMargin: css`
+    margin: 0 1.2em;
     @media ${media.md} {
-        padding: 0 3em;
+        margin: 0 3em;
     }
     @media ${media.lg} {
-        padding: 0 5em;
+        margin: 0 5em;
     }
     @media ${media.xl} {
-        padding: 0 9.375em;
+        margin: 0 9.375em;
     }
-
+  `,
+  projectMargin: css`
+    margin: 0;
+    @media ${media.md} {
+        margin: 0 3em;
+    }
+    @media ${media.lg} {
+        margin: 0 7em;
+    }
+    @media ${media.xl} {
+        margin: 0 12em;
+    }
   `,
 };
 

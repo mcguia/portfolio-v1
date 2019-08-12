@@ -4,17 +4,15 @@ import { mixins, Main } from '@styles';
 import styled from 'styled-components';
 
 const MainContainer = styled(Main)`
-    ${mixins.sidePadding};
+    ${mixins.sideMargin};
 `;
 
 const HomePage = () => (
-    <Layout>
-        <MainContainer id="content">
-            <Landing />
-            <Projects />
-            <Footer />
-        </MainContainer>
-    </Layout>
+    <MainContainer id="content">
+        <Landing />
+        <Projects />
+        <Footer />
+    </MainContainer>
 );
 
 export default HomePage;

@@ -1,20 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import {CSSTransition, TransitionGroup } from 'react-transition-group';
 import { Project, Footer, Layout } from '@components';
 import { mixins, Main, Section } from '@styles';
 import styled from 'styled-components';
 
 const ProjectContainer = styled(Main)`
-    ${mixins.sidePadding};
+    ${mixins.sideMargin};
 `;
 
-const ProjectPage = ({ data }) => (
-    <Layout>
-        <ProjectContainer id="content">
+const ProjectPage = ({ data }) => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsMounted(true), 500);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  return (
+  <ProjectContainer id="content">
+      <TransitionGroup>
+        {isMounted &&
+          <CSSTransition classNames="fade" timeout={3000}>
             <Project data={data.contentfulProject} />
-            <Footer />
-        </ProjectContainer>
-    </Layout>
-);
+          </CSSTransition>
+        }
+      </TransitionGroup>
+      <Footer />
+  </ProjectContainer>
+  );
+};
 
 export default ProjectPage;
 

@@ -36,6 +36,7 @@ const ExpTitle = styled.h4`
         font-size: ${fontSizes.lg};
     }
     font-size: ${fontSizes.sm};
+    line-height: 2;
 `;
 
 const Company = styled.span`

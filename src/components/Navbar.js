@@ -1,14 +1,27 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Headroom from 'react-headroom';
 import styled from 'styled-components';
 import { SectionLinks } from 'react-scroll-section';
 import { theme, mixins, media } from '@styles';
 import { throttle } from '@utils';
-const { fontSizes, fonts } = theme;
+const { colors, fontSizes, fonts } = theme;
 
 
 const NavContainer = styled(Headroom)`
+    .headroom {
+        padding: 0 1.2em;
+        @media ${media.md} {
+            padding: 0 3em;
+        }
+        @media ${media.lg} {
+            padding: 0 5em;
+        }
+        @media ${media.xl} {
+            padding: 0 9.375em;
+        }
+    }
     .headroom--pinned {
         background: #fff;
     }
@@ -18,6 +31,7 @@ const NavContainer = styled(Headroom)`
     width: 100%;
     z-index: 11;
     height: 70px;
+    transition: ${theme.transition};
 `;
 
 const Nav = styled.nav`
@@ -28,16 +42,7 @@ const Nav = styled.nav`
     width: 100%;
     font-family: ${fonts.HKGrotesk};
     z-index: 12;
-    padding: .5em 1.2em;
-    @media ${media.md} {
-        padding: .5em 3em;
-    }
-    @media ${media.lg} {
-        padding: .5em 5em;
-    }
-    @media ${media.xl} {
-        padding: .5em 9.375em;
-    }
+    margin: 1em 0;
 `;
 
 const NavLinks = styled.div`
@@ -56,6 +61,7 @@ const NavListItem = styled.li`
     position: relative;
     font-size: ${fontSizes.sm};
     font-weight: 500;
+    color: ${colors.lightGrey};
 `;
 
 const Logo = styled.div`
@@ -71,14 +77,17 @@ class Navbar extends Component {
 
     state = {
         menuOpen: false,
+        isMounted: false,
     };
 
     componentDidMount() {
+        setTimeout(() => this.setState({ isMounted: true }), 100);
         window.addEventListener('resize', () => throttle(this.handleResize()));
         window.addEventListener('keydown', e => this.handleKeydown(e));
     }
 
     componentWillUnmount() {
+        this.setState({ isMounted: false });
         window.removeEventListener('resize', () => this.handleResize());
         window.removeEventListener('keydown', e => this.handleKeydown(e));
     }
@@ -102,23 +111,33 @@ class Navbar extends Component {
     };
 
     render() {
-        const { menuOpen } = this.state;
+        const { menuOpen, isMounted } = this.state;
         const { menuLinks } = this.props;
 
         return (
             <NavContainer>
                 <Nav>
-                    <Logo>
+                <TransitionGroup>
+                {isMounted &&
+                    <CSSTransition classNames="fade" timeout={3000}>
+                    <Logo style={{ transitionDelay: '100ms' }}>
                         <Link to={'/'}>Austin McGuire</Link>
                     </Logo>
+                    </CSSTransition>
+                }
+                </TransitionGroup>
                     <NavLinks>
                         <NavList>
-                            {menuLinks &&
+                            <TransitionGroup style={{display: "flex"}}>
+                            {isMounted && menuLinks &&
                                 menuLinks.map(({ link, name }, i) => (
-                                <NavListItem key={i}>
-                                    <a href={link}>{name}</a>
+                                <CSSTransition key={i} classNames="fadedown" timeout={3000}>
+                                <NavListItem key={i} style={{ transitionDelay: `${i * 100}ms`}}>
+                                    <Link to={link} activeStyle={{ color: `${colors.darkGrey}` }}>{name}</Link>
                                 </NavListItem>
+                                </CSSTransition>
                             ))}
+                            </TransitionGroup>
                         </NavList>
                     </NavLinks>
                 </Nav>

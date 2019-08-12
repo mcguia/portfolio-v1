@@ -1,6 +1,7 @@
 const theme = {
     colors: {
         lightGrey: '#a1a1a1',
+        darkGrey: '#212121',
     },
 
     fonts: {
@@ -20,6 +21,9 @@ const theme = {
         xs: '1rem',
         xxs: '0.75rem',
     },
+
+    easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
+    transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)',
 };
 
 export default theme;

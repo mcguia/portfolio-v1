@@ -1,15 +1,37 @@
 import React from 'react';
 import { StaticQuery, Link, graphql } from 'gatsby';
 import styled from 'styled-components';
-import { Section } from '@styles';
+import { media, mixins, Section, theme } from '@styles';
 import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-
 import Img from 'gatsby-image';
+const { fontSizes } = theme;
 
+
+const ProjectContainer = styled(Section)`
+  ${mixins.projectMargin};
+`;
+
+const StyledImg = styled.img`
+  max-width: 100%;
+`;
+
+const ProjectText = styled.p`
+    margin-block-start: 1.5em;
+    margin-block-end: 1.5em;
+    @media ${media.md} {
+        font-size: ${fontSizes.xs};
+    }
+    @media ${media.lg} {
+        font-size: ${fontSizes.sm};
+    }
+    @media ${media.xl} {
+        font-size: ${fontSizes.md};
+    }
+`;
 
 const Bold = ({ children }) => <span className="bold">{children}</span>
-const Text = ({ children }) => <p className="align-center">{children}</p>
+
 
 const options = {
   renderMark: {
@@ -23,7 +45,7 @@ const options = {
 
       switch (mimeGroup) {
         case 'image':
-          return <img
+          return <StyledImg
             title={ title ? title['en-US'] : null}
             alt={description ?  description['en-US'] : null}
             src={file['en-US'].url}
@@ -32,13 +54,10 @@ const options = {
 
     },
 
-    [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
+    [BLOCKS.PARAGRAPH]: (node, children) => <ProjectText>{children}</ProjectText>,
   }
 }
 
-const ProjectContainer = styled(Section)`
-
-`;
 
 const Project = ({ data }) => {
   const { title, mainContent, featuredImage } = data;

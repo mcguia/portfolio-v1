@@ -20,6 +20,13 @@ module.exports = {
     },
     plugins: [
     "gatsby-plugin-styled-components",
+    "gatsby-plugin-react-helmet",
+        {
+        resolve: "gatsby-plugin-layout",
+        options: {
+            component: require.resolve(`./src/components/Layout.js`),
+        },
+    },
     "gatsby-transformer-remark",
     {
         resolve: "gatsby-source-contentful",

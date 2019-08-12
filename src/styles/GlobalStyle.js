@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import theme from './theme';
 import * as fontFamilies from './fonts';
-const { fonts } = theme;
+const { colors, fonts } = theme;
 
 const GlobalStyle = createGlobalStyle`
     @font-face {
@@ -162,7 +162,7 @@ const GlobalStyle = createGlobalStyle`
         min-height: 100%;
         -webkit-font-smoothing: antialiased;
         font-family: ${fonts.Lato};
-        color: #202020;
+        color: #212121;
         line-height: 2;
     }
 
@@ -173,10 +173,19 @@ const GlobalStyle = createGlobalStyle`
         cursor: pointer;
     }
 
+    &:hover,
+    &:focus  {
+        color: ${colors.darkGrey};
+    }
+
     ul, ol {
         padding: 0;
         margin: 0;
         list-style: none;
+    }
+
+    nav ul li a {
+        transition: all .2s linear;
     }
 
     h1,
@@ -187,7 +196,43 @@ const GlobalStyle = createGlobalStyle`
         font-weight: 600;
         -webkit-font-smoothing: antialiased;
         font-family: ${fonts.HKGrotesk};
-        color: #202020;
+        color: #212121;
+        line-height: 1.3;
+    }
+
+    .fadeup-enter {
+    opacity: 0.01;
+    transform: translateY(20px);
+    transition: opacity 500ms ${theme.easing}, transform 500ms ${theme.easing};
+    }
+    .fadeup-enter-active {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: opacity 500ms ${theme.easing}, transform 500ms ${theme.easing};
+    }
+    .fadedown-enter {
+    opacity: 0.01;
+    transform: translateY(-20px);
+    transition: opacity 500ms ${theme.easing}, transform 500ms ${theme.easing};
+    }
+    .fadedown-enter-active {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: opacity 500ms ${theme.easing}, transform 500ms ${theme.easing};
+    }
+    .fade-enter {
+    opacity: 0.01;
+    transition: opacity 500ms ${theme.easing};
+    }
+    .fade-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ${theme.easing};
+    .fade-exit {
+    opacity: 1;
+    }
+    .fade-exit-active {
+    opacity: 0;
+    transition: opacity 500ms ${theme.easing};
     }
 
 `;

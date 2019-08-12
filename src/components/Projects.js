@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby';
+import {TransitionGroup, CSSTransition } from 'react-transition-group';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import { media, Section, theme } from '@styles';
@@ -31,6 +32,19 @@ const Description = styled.div`
     padding: 2.5em 0 3em 0;
 `;
 
+const ProjectType = styled.h5`
+    color: ${colors.lightGrey};
+    margin: 0;
+
+    @media ${media.md} {
+        font-size: ${fontSizes.xs};
+    }
+    @media ${media.xl} {
+        font-size: ${fontSizes.sm};
+    }
+    font-size: ${fontSizes.xs};
+`;
+
 const ProjectName = styled.h4`
     margin: 0;
 
@@ -43,18 +57,6 @@ const ProjectName = styled.h4`
     font-size: ${fontSizes.md};
 `;
 
-const ProjectType = styled.h5`
-    color: ${colors.lightGrey};
-    margin: 0 0 .5em;
-
-    @media ${media.md} {
-        font-size: ${fontSizes.xs};
-    }
-    @media ${media.xl} {
-        font-size: ${fontSizes.sm};
-    }
-    font-size: ${fontSizes.xs};
-`;
 
 
 const Projects = () => (
@@ -83,11 +85,18 @@ const Projects = () => (
 
             `}
             render={data => {
+                const [isMounted, setIsMounted] = useState(false);
+                useEffect(() => {
+                    const timeout = setTimeout(() => setIsMounted(true), 1000);
+                    return () => clearTimeout(timeout);
+                  }, []);
+
                 const Projects = data.allContentfulProject.edges;
 
                 return (
-                    <div>
-                    {Projects.map(({ node: project }) => (
+                    <TransitionGroup>
+                    {isMounted && Projects.map(({ node: project }) => (
+                        <CSSTransition classNames="fade" timeout={3000}>
                         <ProjectsRow key={project.id}>
                             <ProjectsColumn>
                                 <Link to={`/project/${project.slug}`}>
@@ -100,8 +109,9 @@ const Projects = () => (
                             </ProjectsColumn>
                             <ProjectsColumn />
                         </ProjectsRow>
+                        </CSSTransition>
                         ))}
-                    </div>
+                    </TransitionGroup>
                 );
             }}
         />
