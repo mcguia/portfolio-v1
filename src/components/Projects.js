@@ -87,7 +87,7 @@ const Projects = () => (
             render={data => {
                 const [isMounted, setIsMounted] = useState(false);
                 useEffect(() => {
-                    const timeout = setTimeout(() => setIsMounted(true), 1000);
+                    const timeout = setTimeout(() => setIsMounted(true), 2000);
                     return () => clearTimeout(timeout);
                   }, []);
 
@@ -96,8 +96,8 @@ const Projects = () => (
                 return (
                     <TransitionGroup>
                     {isMounted && Projects.map(({ node: project }) => (
-                        <CSSTransition classNames="fade" timeout={3000}>
-                        <ProjectsRow key={project.id}>
+                        <CSSTransition classNames="fade" timeout={3000} key={project.id}>
+                        <ProjectsRow>
                             <ProjectsColumn>
                                 <Link to={`/project/${project.slug}`}>
                                     <Img fluid={project.featuredImage.fluid} imgStyle={{position: "relative"}}/>

@@ -148,6 +148,7 @@ const GlobalStyle = createGlobalStyle`
     html {
         box-sizing: border-box;
         width: 100%;
+        overflow-y: scroll;
     }
 
     *,
