@@ -24,6 +24,9 @@ const mixins = {
         margin: 0 7em;
     }
     @media ${media.xl} {
+        margin: 0 5em;
+    }
+    @media (min-width: 1350px) {
         margin: 0 12em;
     }
   `,

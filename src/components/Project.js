@@ -65,7 +65,6 @@ const Project = ({ data }) => {
   return (
       <ProjectContainer id="project">
         <h1>{title}</h1>
-        <Img alt={title} fluid={featuredImage.fluid} imgStyle={{position: "relative"}}/>
         { documentToReactComponents(mainContent.json, options) }
         <Link to="/">Back to Home</Link>
       </ProjectContainer>

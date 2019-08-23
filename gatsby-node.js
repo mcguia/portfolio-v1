@@ -7,22 +7,6 @@
 // https://www.gatsbyjs.org/docs/debugging-html-builds/#fixing-third-party-modules
 
 const path = require('path');
-
-exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
-
-  actions.setWebpackConfig({
-    resolve: {
-      alias: {
-        '@components': path.resolve(__dirname, 'src/components'),
-        '@fonts': path.resolve(__dirname, 'src/fonts'),
-        '@styles': path.resolve(__dirname, 'src/styles'),
-        '@utils': path.resolve(__dirname, 'src/utils'),
-      },
-    },
-  });
-};
-
-
 const slash = require(`slash`);
 exports.createPages = ({ graphql, actions }) => {
 const { createPage } = actions;
@@ -44,7 +28,7 @@ const { createPage } = actions;
       if (result.errors) {
         console.log("Error retrieving contentful data",      result.errors);
       }
-      const projectTemplate = path.resolve("./src/pages/project.js");
+      const projectTemplate = path.resolve("./src/templates/project.js");
       result.data.allContentfulProject.edges.forEach(edge => {
         createPage({
           path: `/project/${edge.node.slug}/`,
@@ -59,4 +43,28 @@ const { createPage } = actions;
     .catch(error => {
       console.log("Error retrieving contentful data", error);
     });
+};
+
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /react-pts-canvas/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        '@components': path.resolve(__dirname, 'src/components'),
+        '@fonts': path.resolve(__dirname, 'src/fonts'),
+        '@styles': path.resolve(__dirname, 'src/styles'),
+        '@utils': path.resolve(__dirname, 'src/utils'),
+      },
+    },
+  });
 };

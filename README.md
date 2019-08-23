@@ -3,7 +3,7 @@
   Portfolio v1
 </h1>
 
-My portfolio, built with Gatsby, Contentful, and hosted with Netlify.
+My portfolio, built with Gatsby, Contentful, and Netlify.
 
 ## 🚀 Quick start
 
@@ -11,7 +11,6 @@ My portfolio, built with Gatsby, Contentful, and hosted with Netlify.
 
 
     ```sh
-    # create a new Gatsby site using the hello-world starter
     npm install -g gatsby-cli
     ```
 
