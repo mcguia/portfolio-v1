@@ -165,6 +165,7 @@ const GlobalStyle = createGlobalStyle`
         font-family: ${fonts.Lato};
         color: #212121;
         line-height: 2;
+        overflow: hidden;
     }
 
     a {

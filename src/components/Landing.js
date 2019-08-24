@@ -3,13 +3,29 @@ import { StaticQuery, graphql } from 'gatsby';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { media, Section, theme } from '@styles';
+import ImageParticles from '../components/ImageParticles';
 const { fontSizes } = theme;
+
 
 const LandingContainer = styled(Section)`
     position: relative;
     @media ${media.md} {
         padding: 15em 0;
     }
+`;
+
+const LandingRow = styled.div`
+    align-items: center;
+    @media ${media.md} {
+        display: flex;
+    }
+`;
+
+const LandingColumn = styled.div`
+    display: block;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
 `;
 
 const Hello = styled.h1`
@@ -66,7 +82,8 @@ const Landing = () => (
                 const items = [one, two];
 
                 return (
-                    <Fragment>
+                    <LandingRow>
+                        <LandingColumn>
                         <TransitionGroup>
                             {isMounted &&
                                 items.map((item, i) => (
@@ -75,7 +92,11 @@ const Landing = () => (
                                 </CSSTransition>
                             ))}
                         </TransitionGroup>
-                    </Fragment>
+                        </LandingColumn>
+                        <LandingColumn>
+                        <ImageParticles imageUrl="https://i.imgur.com/WFDRjKY.png" size="5" />
+                        </LandingColumn>
+                    </LandingRow>
                 );
             }}
         />
