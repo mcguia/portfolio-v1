@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import PixiParticlesRenderer from './PixiParticlesRenderer';
+let PixiParticlesRenderer;
+try {
+  PixiParticlesRenderer = require('./PixiParticlesRenderer')
+    .default;
+} catch (e) {}
 
 
 const CanvasWrapper = styled.div`
