@@ -32,12 +32,12 @@ const LandingColumn = styled.div`
 const Hello = styled.h1`
 
     @media ${media.lg} {
-        font-size: ${fontSizes.xl};
-    }
-    @media ${media.xl} {
         font-size: ${fontSizes.xxl};
     }
-    font-size: ${fontSizes.lg};
+    @media ${media.xl} {
+        font-size: ${fontSizes.xxxl};
+    }
+    font-size: ${fontSizes.xl};
 
 `;
 
@@ -95,9 +95,7 @@ const Landing = () => (
                             </TransitionGroup>
                         </LandingColumn>
                         <LandingColumn>
-                        {typeof window !== 'undefined' &&
-                            <ImageParticles imageUrl="https://i.imgur.com/WFDRjKY.png" size="5" />
-                        }
+                            <ImageParticles imageUrl={'smiley.png'} size="8" />
                         </LandingColumn>
                     </LandingRow>
                 );

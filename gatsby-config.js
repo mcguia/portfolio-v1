@@ -10,7 +10,7 @@ const { spaceId, accessToken } = process.env;
 module.exports = {
     siteMetadata: {
         title:'Austin McGuire',
-        description:'Austin McGuire\'s is a software engineer who specializes in front end development and design.',
+        description:'Austin McGuire is a software engineer who specializes in front end development and design.',
         siteUrl: 'https://austinmcguire.dev',
         menuLinks:[{
             name:'work',

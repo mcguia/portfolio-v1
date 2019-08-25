@@ -13,7 +13,7 @@ const CanvasWrapper = styled.div`
   height: 100%;
 
   canvas {
-    max-width: 400%;
+    max-width: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -28,6 +28,7 @@ const CanvasWrapper = styled.div`
 
       canvas {
         max-width: 350%;
+        left: 0;
       }
   }
 

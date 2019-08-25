@@ -88,14 +88,10 @@ class Navbar extends Component {
 
     componentDidMount() {
         setTimeout(() => this.setState({ isMounted: true }), 100);
-        window.addEventListener('resize', () => throttle(this.handleResize()));
-        window.addEventListener('keydown', e => this.handleKeydown(e));
     }
 
     componentWillUnmount() {
         this.setState({ isMounted: false });
-        window.removeEventListener('resize', () => this.handleResize());
-        window.removeEventListener('keydown', e => this.handleKeydown(e));
     }
 
 
