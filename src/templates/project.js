@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {CSSTransition, TransitionGroup } from 'react-transition-group';
-import { Project, Footer, Layout } from '@components';
-import { mixins, Main, Section } from '@styles';
+import { Project, Footer } from '@components';
+import { mixins, Main } from '@styles';
 import styled from 'styled-components';
 
 const ProjectContainer = styled(Main)`

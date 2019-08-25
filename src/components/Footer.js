@@ -1,10 +1,7 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, StaticQuery, graphql } from 'gatsby';
-import Headroom from 'react-headroom';
 import styled from 'styled-components';
-import { SectionLinks } from 'react-scroll-section';
-import { theme, mixins, media } from '@styles';
-import { throttle } from '@utils';
+import { theme, media } from '@styles';
 const { fontSizes, fonts } = theme;
 
 
@@ -86,7 +83,7 @@ const Footer = () => (
                                 {
                                     Socials.map(({ node: social }) => (
                                     <FooterListItem key={social.id}>
-                                        <a href={social.url} target="_blank" alt={social.name}>{social.name.toLowerCase()}</a>
+                                        <a href={social.url} target="_blank" rel="noopener noreferrer" alt={social.name}>{social.name.toLowerCase()}</a>
                                     </FooterListItem>
                                 ))}
                             </FooterList>

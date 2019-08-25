@@ -1,8 +1,8 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-import { Header, media, Section, theme } from '@styles';
-const { colors, fonts, fontSizes } = theme;
+import { Header, media, theme } from '@styles';
+const { fontSizes } = theme;
 
 const SkillsContainer = styled.div`
     padding: 0;

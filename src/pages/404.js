@@ -1,10 +1,9 @@
-import React from 'react';
-import Layout from '../components/Layout';
+import React, { Fragment } from 'react';
 
 const NotFoundPage = () => (
-    <Layout>
+    <Fragment>
         {"404 error"}
-    </Layout>
+    </Fragment>
 );
 
 export default NotFoundPage;

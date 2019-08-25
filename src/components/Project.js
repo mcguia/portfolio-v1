@@ -1,10 +1,9 @@
 import React from 'react';
-import { StaticQuery, Link, graphql } from 'gatsby';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { media, mixins, Section, theme } from '@styles';
-import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types';
+import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import Img from 'gatsby-image';
 const { fontSizes } = theme;
 
 
@@ -60,7 +59,7 @@ const options = {
 
 
 const Project = ({ data }) => {
-  const { title, mainContent, featuredImage } = data;
+  const { title, mainContent } = data;
 
   return (
       <ProjectContainer id="project">

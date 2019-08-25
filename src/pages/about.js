@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import { About, Experience, Footer, Layout, Skills } from '@components';
+import { About, Experience, Footer, Skills } from '@components';
 import { mixins, Main, Section } from '@styles';
 import styled from 'styled-components';
 

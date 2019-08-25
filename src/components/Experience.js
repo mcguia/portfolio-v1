@@ -1,7 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-import { Header, media, Section, theme } from '@styles';
+import { Header, media, theme } from '@styles';
 const { colors, fonts, fontSizes } = theme;
 
 const ExpContainer = styled.div`

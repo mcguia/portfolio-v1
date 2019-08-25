@@ -1,5 +1,5 @@
 import React from 'react';
-import { Footer, Landing, Layout, Projects } from '@components';
+import { Footer, Landing, Projects } from '@components';
 import { mixins, Main } from '@styles';
 import styled from 'styled-components';
 

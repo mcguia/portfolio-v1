@@ -3,9 +3,9 @@ import { Link } from 'gatsby';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Headroom from 'react-headroom';
 import styled from 'styled-components';
-import { SectionLinks } from 'react-scroll-section';
-import { theme, mixins, media } from '@styles';
+import { theme, media } from '@styles';
 import { throttle } from '@utils';
+import logo from '@images/logo.png';
 const { colors, fontSizes, fonts } = theme;
 
 
@@ -72,6 +72,12 @@ const Logo = styled.div`
     font-weight: 600;
 `;
 
+const LogoImg = styled.img`
+    width: 50px;
+    height: auto;
+    vertical-align: middle;
+`;
+
 
 class Navbar extends Component {
 
@@ -92,26 +98,9 @@ class Navbar extends Component {
         window.removeEventListener('keydown', e => this.handleKeydown(e));
     }
 
-    toggleMenu = () => this.setState({ menuOpen: !this.state.menuOpen });
-
-    handleResize = () => {
-        if (window.innerWidth > 768 && this.state.menuOpen) {
-            this.toggleMenu();
-        }
-    };
-
-    handleKeydown = e => {
-        if (!this.state.menuOpen) {
-            return;
-        }
-
-        if (e.which == 27 || e.key === 'Escape') {
-            this.toggleMenu();
-        }
-    };
 
     render() {
-        const { menuOpen, isMounted } = this.state;
+        const { isMounted } = this.state;
         const { menuLinks } = this.props;
 
         return (
@@ -121,7 +110,9 @@ class Navbar extends Component {
                 {isMounted &&
                     <CSSTransition classNames="fade" timeout={3000}>
                     <Logo style={{ transitionDelay: '100ms' }}>
-                        <Link to={'/'}>Austin McGuire</Link>
+                        <Link to={'/'}>
+                            <LogoImg src={logo} />
+                        </Link>
                     </Logo>
                     </CSSTransition>
                 }
