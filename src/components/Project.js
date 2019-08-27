@@ -37,6 +37,10 @@ const ProjectRow = styled.div`
 
 const ProjectColumn = styled.div`
     ${mixins.column};
+    @media ${media.md} {
+      padding: 0;
+    }
+    padding-bottom: 1.5em;
 `;
 
 const InfoRow = styled.div`

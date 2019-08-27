@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
-import { media, Section, theme } from '@styles';
+import { media, Section, theme, mixins } from '@styles';
 import ImageParticles from '../components/ImageParticles';
 
 const { fontSizes } = theme;
@@ -10,23 +10,22 @@ const { fontSizes } = theme;
 
 const LandingContainer = styled(Section)`
     position: relative;
-    @media ${media.md} {
-        padding: 12em 0;
-    }
 `;
 
 const LandingRow = styled.div`
-    align-items: center;
-    @media ${media.md} {
-        display: flex;
-    }
+    ${mixins.row};
 `;
 
-const LandingColumn = styled.div`
-    display: block;
-    flex-basis: 0;
-    flex-grow: 1;
-    flex-shrink: 1;
+const LeftColumn = styled.div`
+    ${mixins.column};
+`;
+
+const RightColumn = styled.div`
+    ${mixins.column};
+    @media ${media.md} {
+        padding: 0;
+    }
+    padding: 5em 0;
 `;
 
 const Hello = styled.h1`
@@ -84,7 +83,7 @@ const Landing = () => (
 
                 return (
                     <LandingRow>
-                        <LandingColumn>
+                        <LeftColumn>
                             <TransitionGroup>
                                 {isMounted &&
                                     items.map((item, i) => (
@@ -93,10 +92,10 @@ const Landing = () => (
                                     </CSSTransition>
                                 ))}
                             </TransitionGroup>
-                        </LandingColumn>
-                        <LandingColumn>
+                        </LeftColumn>
+                        <RightColumn>
                             <ImageParticles imageUrl={'smiley.png'} size="8" />
-                        </LandingColumn>
+                        </RightColumn>
                     </LandingRow>
                 );
             }}

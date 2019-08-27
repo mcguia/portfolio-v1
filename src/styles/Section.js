@@ -9,10 +9,10 @@ const Section = styled.section`
         padding: 5em 0;
     }
     @media ${media.md} {
-        padding: 7em 0;
+        padding: 6.5em 0;
     }
     @media ${media.lg} {
-        padding: 10em 0;
+        padding: 8em 0;
     }
     padding: 5em 0;
 `;
