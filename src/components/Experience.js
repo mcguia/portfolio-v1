@@ -1,106 +1,113 @@
-import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
-import styled from 'styled-components';
-import { Header, media, theme, mixins } from '@styles';
-const { colors, fonts, fontSizes } = theme;
+import React from "react"
+import { StaticQuery, graphql } from "gatsby"
+import styled from "styled-components"
+import { Header, media, theme, mixins } from "@styles"
+const { colors, fonts, fontSizes } = theme
 
 const ExpContainer = styled.div`
-    padding-top: 0;
-`;
+  padding-top: 0;
+`
 
 const ExpRow = styled.div`
-    ${mixins.row};
-`;
+  ${mixins.row};
+`
 
 const ExpColumn = styled.div`
-    ${mixins.column};
-`;
+  ${mixins.column};
+`
 
 const ExpBlock = styled.div`
-    margin-bottom: 2em;
-`;
+  margin-bottom: 2em;
+`
 
 const ExpTitle = styled.h4`
-    font-weight: 600;
-    margin: 0;
+  font-weight: 600;
+  margin: 0;
 
-    @media ${media.lg} {
-        font-size: ${fontSizes.md};
-    }
-    @media ${media.xl} {
-        font-size: ${fontSizes.lg};
-    }
-    font-size: ${fontSizes.sm};
-    line-height: 2;
-`;
+  @media ${media.lg} {
+    font-size: ${fontSizes.md};
+  }
+  @media ${media.xl} {
+    font-size: ${fontSizes.lg};
+  }
+  font-size: ${fontSizes.sm};
+  line-height: 2;
+`
 
 const Company = styled.span`
-    font-weight: 500;
-`;
+  font-weight: 500;
+`
 const ExpDate = styled.div`
-    font-family: ${fonts.ApercuMono};
-    color: ${colors.lightGrey};
-    margin: -0.5em 0 0.5em 0;
-    @media ${media.md} {
-        font-size: ${fontSizes.xs};
-    }
-    @media ${media.lg} {
-        font-size: ${fontSizes.sm};
-    }
-    @media ${media.xl} {
-        font-size: ${fontSizes.sm};
-    }
-`;
+  font-family: ${fonts.ApercuMono};
+  color: ${colors.lightGrey};
+  margin: -0.5em 0 0.5em 0;
+  @media ${media.md} {
+    font-size: ${fontSizes.xs};
+  }
+  @media ${media.lg} {
+    font-size: ${fontSizes.sm};
+  }
+  @media ${media.xl} {
+    font-size: ${fontSizes.sm};
+  }
+`
 
 const Experience = () => (
-    <ExpContainer id="experience">
-        <StaticQuery
-            query={graphql`
-                query ExpQuery {
-                  allContentfulExperience(sort: {fields: date, order: DESC}) {
-                    edges {
-                      node {
-                        id
-                        title
-                        company
-                        startDate
-                        endDate
-                        date
-                        description {
-                          description
-                        }
-                      }
-                    }
-                  }
+  <ExpContainer id="experience">
+    <StaticQuery
+      query={graphql`
+        query ExpQuery {
+          allContentfulExperience(sort: { fields: date, order: DESC }) {
+            edges {
+              node {
+                id
+                title
+                company
+                startDate
+                endDate
+                date
+                description {
+                  description
                 }
-            `}
-            render={data => {
-                const Exps = data.allContentfulExperience.edges;
+              }
+            }
+          }
+        }
+      `}
+      render={data => {
+        const Exps = data.allContentfulExperience.edges
 
-                return (
-                    <ExpRow>
-                        <ExpColumn>
-                            <Header style={{marginTop: "-0.5em"}}>Experience</Header>
-                        </ExpColumn>
-                        <ExpColumn>
-                            {Exps.map(({ node: exp }) => (
-                                <ExpBlock key={exp.id}>
-                                    <ExpTitle><span>{exp.title}</span>
-                                        <Company>
-                                        <span>&nbsp;@&nbsp;</span>
-                                        <span>{exp.company}</span>
-                                        </Company>
-                                    </ExpTitle>
-                                    <ExpDate>{exp.startDate}–{exp.endDate}</ExpDate>
-                                    <div dangerouslySetInnerHTML={{ __html: exp.description.description }}></div>
-                                </ExpBlock>
-                            ))}
-                        </ExpColumn>
-                    </ExpRow>
-                );
-            }}
-        />
-    </ExpContainer>
-);
+        return (
+          <ExpRow>
+            <ExpColumn>
+              <Header style={{ marginTop: "-0.5em" }}>Experience</Header>
+            </ExpColumn>
+            <ExpColumn>
+              {Exps.map(({ node: exp }) => (
+                <ExpBlock key={exp.id}>
+                  <ExpTitle>
+                    <span>{exp.title}</span>
+                    <Company>
+                      <span>&nbsp;@&nbsp;</span>
+                      <span>{exp.company}</span>
+                    </Company>
+                  </ExpTitle>
+                  <ExpDate>
+                    {exp.startDate}–{exp.endDate}
+                  </ExpDate>
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: exp.description.description,
+                    }}
+                  ></div>
+                </ExpBlock>
+              ))}
+            </ExpColumn>
+          </ExpRow>
+        )
+      }}
+    />
+  </ExpContainer>
+)
 
-export default Experience;
+export default Experience

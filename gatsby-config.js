@@ -23,6 +23,7 @@ module.exports = {
     },
     plugins: [
     "gatsby-plugin-styled-components",
+    "gatsby-plugin-offline",
     "gatsby-plugin-react-helmet",
         {
         resolve: "gatsby-plugin-layout",

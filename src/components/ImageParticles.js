@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-let PixiParticlesRenderer;
+import React, { Component } from "react"
+import styled from "styled-components"
+let PixiParticlesRenderer
 try {
-  PixiParticlesRenderer = require('./PixiParticlesRenderer')
-    .default;
+  PixiParticlesRenderer = require("./PixiParticlesRenderer").default
 } catch (e) {}
-
 
 const CanvasWrapper = styled.div`
   position: relative;
@@ -21,28 +19,27 @@ const CanvasWrapper = styled.div`
   }
 
   @media (max-width: 767px) {
-      margin: 40px auto 0;
-      height: calc(100vw - 80px);
-      max-width: 150px;
-      max-height: 150px;
+    margin: 40px auto 0;
+    height: calc(100vw - 80px);
+    max-width: 150px;
+    max-height: 150px;
 
-      canvas {
-        max-width: 350%;
-        left: 0;
-      }
+    canvas {
+      max-width: 350%;
+      left: 0;
+    }
   }
-
-`;
+`
 
 class ImageParticles extends Component {
   constructor(props) {
-    super(props);
-    this.pixiParticles = null;
-    this.pixiCanvasWrapper = React.createRef();
+    super(props)
+    this.pixiParticles = null
+    this.pixiCanvasWrapper = React.createRef()
   }
 
   componentDidMount() {
-    const { imageUrl, width, height, padding, size, repulsion } = this.props;
+    const { imageUrl, width, height, padding, size, repulsion } = this.props
     if (PixiParticlesRenderer) {
       this.pixiParticles = new PixiParticlesRenderer(
         this.pixiCanvasWrapper.current,
@@ -54,14 +51,14 @@ class ImageParticles extends Component {
           PARTICLE_SIZE: size || 3,
           REPULSION_CHANGE_DISTANCE: repulsion || 100,
         }
-      );
+      )
     }
   }
 
   componentWillUnmount() {
-    clearTimeout(this.mountTimeout);
+    clearTimeout(this.mountTimeout)
     if (this.pixiParticles) {
-      this.pixiParticles.destroy();
+      this.pixiParticles.destroy()
     }
   }
 
@@ -72,8 +69,8 @@ class ImageParticles extends Component {
           <canvas className="pixi__canvas" />
         </div>
       </CanvasWrapper>
-    );
+    )
   }
 }
 
-export default ImageParticles;
+export default ImageParticles

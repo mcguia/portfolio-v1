@@ -1,8 +1,7 @@
-import styled from 'styled-components';
-
+import styled from "styled-components"
 
 const Main = styled.main`
   margin: 0 auto;
-`;
+`
 
-export default Main;
+export default Main

@@ -1,8 +1,8 @@
-import { createGlobalStyle } from 'styled-components';
-import theme from './theme';
-import media from './media';
-import * as fontFamilies from './fonts';
-const { colors, fonts, fontSizes } = theme;
+import { createGlobalStyle } from "styled-components"
+import theme from "./theme"
+import media from "./media"
+import * as fontFamilies from "./fonts"
+const { colors, fonts, fontSizes } = theme
 
 const GlobalStyle = createGlobalStyle`
     @font-face {
@@ -214,40 +214,40 @@ const GlobalStyle = createGlobalStyle`
     }
 
     .fadeup-enter {
-    opacity: 0.01;
-    transform: translateY(20px);
-    transition: opacity 500ms ${theme.easing}, transform 500ms ${theme.easing};
+        opacity: 0.01;
+        transform: translateY(20px);
+        transition: opacity 500ms ${theme.easing}, transform 500ms ${theme.easing};
     }
     .fadeup-enter-active {
-    opacity: 1;
-    transform: translateY(0px);
-    transition: opacity 500ms ${theme.easing}, transform 500ms ${theme.easing};
+        opacity: 1;
+        transform: translateY(0px);
+        transition: opacity 500ms ${theme.easing}, transform 500ms ${theme.easing};
     }
     .fadedown-enter {
-    opacity: 0.01;
-    transform: translateY(-20px);
-    transition: opacity 500ms ${theme.easing}, transform 500ms ${theme.easing};
+        opacity: 0.01;
+        transform: translateY(-20px);
+        transition: opacity 500ms ${theme.easing}, transform 500ms ${theme.easing};
     }
     .fadedown-enter-active {
-    opacity: 1;
-    transform: translateY(0px);
-    transition: opacity 500ms ${theme.easing}, transform 500ms ${theme.easing};
+        opacity: 1;
+        transform: translateY(0px);
+        transition: opacity 500ms ${theme.easing}, transform 500ms ${theme.easing};
     }
     .fade-enter {
-    opacity: 0.01;
-    transition: opacity 500ms ${theme.easing};
+        opacity: 0.01;
+        transition: opacity 500ms ${theme.easing};
     }
     .fade-enter-active {
-    opacity: 1;
-    transition: opacity 500ms ${theme.easing};
+        opacity: 1;
+        transition: opacity 500ms ${theme.easing};
     .fade-exit {
-    opacity: 1;
+        opacity: 1;
     }
     .fade-exit-active {
-    opacity: 0;
-    transition: opacity 500ms ${theme.easing};
+        opacity: 0;
+        transition: opacity 500ms ${theme.easing};
     }
 
-`;
+`
 
-export default GlobalStyle;
+export default GlobalStyle

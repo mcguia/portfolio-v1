@@ -1,40 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import Helmet from 'react-helmet';
-import {CSSTransition, TransitionGroup } from 'react-transition-group';
-import { Project, Footer } from '@components';
-import { mixins, Main } from '@styles';
-import styled from 'styled-components';
+import React, { useState, useEffect } from "react"
+import Helmet from "react-helmet"
+import { CSSTransition, TransitionGroup } from "react-transition-group"
+import { Project, Footer } from "@components"
+import { mixins, Main } from "@styles"
+import styled from "styled-components"
 
 const ProjectContainer = styled(Main)`
-    ${mixins.sideMargin};
-`;
+  ${mixins.sideMargin};
+`
 
 const ProjectPage = ({ data }) => {
-  const [isMounted, setIsMounted] = useState(false);
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 500);
-    return () => clearTimeout(timeout);
-  }, []);
+    const timeout = setTimeout(() => setIsMounted(true), 500)
+    return () => clearTimeout(timeout)
+  }, [])
 
   return (
-  <ProjectContainer id="content">
-    <Helmet title={data.site.siteMetadata.title + ' | ' + data.contentfulProject.title}>
-    </Helmet>
+    <ProjectContainer id="content">
+      <Helmet
+        title={
+          data.site.siteMetadata.title + " | " + data.contentfulProject.title
+        }
+      ></Helmet>
       <TransitionGroup>
-        {isMounted &&
+        {isMounted && (
           <CSSTransition classNames="fade" timeout={3000}>
             <Project data={data.contentfulProject} />
           </CSSTransition>
-        }
+        )}
       </TransitionGroup>
       <Footer />
-  </ProjectContainer>
-  );
-};
+    </ProjectContainer>
+  )
+}
 
-export default ProjectPage;
-
+export default ProjectPage
 
 export const PageQuery = graphql`
   query ProjectQuery($slug: String!) {
@@ -65,4 +67,4 @@ export const PageQuery = graphql`
       }
     }
   }
-`;
+`
