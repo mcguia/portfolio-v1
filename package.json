@@ -2,13 +2,14 @@
   "name": "gatsby-portfolio",
   "description": "Personal Portfolio v1",
   "version": "1.0.0",
+  "author": "Austin McGuire <amcg10@gmail.com>",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
-    "serve": "gatsby serve",
+    "serve": "gatsby serve"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.4.0",
