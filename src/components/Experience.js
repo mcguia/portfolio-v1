@@ -1,7 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-import { Header, media, theme } from '@styles';
+import { Header, media, theme, mixins } from '@styles';
 const { colors, fonts, fontSizes } = theme;
 
 const ExpContainer = styled.div`
@@ -9,16 +9,11 @@ const ExpContainer = styled.div`
 `;
 
 const ExpRow = styled.div`
-    @media ${media.md} {
-        display: flex;
-    }
+    ${mixins.row};
 `;
 
 const ExpColumn = styled.div`
-    display: block;
-    flex-basis: 0;
-    flex-grow: 1;
-    flex-shrink: 1;
+    ${mixins.column};
 `;
 
 const ExpBlock = styled.div`
@@ -54,18 +49,6 @@ const ExpDate = styled.div`
     }
     @media ${media.xl} {
         font-size: ${fontSizes.sm};
-    }
-`;
-
-const ExpText = styled.div`
-    @media ${media.md} {
-        font-size: ${fontSizes.xs};
-    }
-    @media ${media.lg} {
-        font-size: ${fontSizes.sm};
-    }
-    @media ${media.xl} {
-        font-size: ${fontSizes.md};
     }
 `;
 
@@ -109,7 +92,7 @@ const Experience = () => (
                                         </Company>
                                     </ExpTitle>
                                     <ExpDate>{exp.startDate}–{exp.endDate}</ExpDate>
-                                    <ExpText dangerouslySetInnerHTML={{ __html: exp.description.description }}></ExpText>
+                                    <div dangerouslySetInnerHTML={{ __html: exp.description.description }}></div>
                                 </ExpBlock>
                             ))}
                         </ExpColumn>

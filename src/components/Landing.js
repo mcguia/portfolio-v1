@@ -11,7 +11,7 @@ const { fontSizes } = theme;
 const LandingContainer = styled(Section)`
     position: relative;
     @media ${media.md} {
-        padding: 15em 0;
+        padding: 12em 0;
     }
 `;
 

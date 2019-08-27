@@ -1,7 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 import theme from './theme';
+import media from './media';
 import * as fontFamilies from './fonts';
-const { colors, fonts } = theme;
+const { colors, fonts, fontSizes } = theme;
 
 const GlobalStyle = createGlobalStyle`
     @font-face {
@@ -166,6 +167,16 @@ const GlobalStyle = createGlobalStyle`
         color: #212121;
         line-height: 2;
         overflow: hidden;
+
+        @media ${media.md} {
+            font-size: ${fontSizes.xs};
+        }
+        @media ${media.lg} {
+            font-size: ${fontSizes.sm};
+        }
+        @media ${media.xl} {
+            font-size: ${fontSizes.md};
+        }
     }
 
     a {

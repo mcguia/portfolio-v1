@@ -15,21 +15,20 @@ const mixins = {
         margin: 0 9.375em;
     }
   `,
-  projectMargin: css`
-    margin: 0;
+
+  row: css`
+    align-items: center;
     @media ${media.md} {
-        margin: 0 3em;
-    }
-    @media ${media.lg} {
-        margin: 0 7em;
-    }
-    @media ${media.xl} {
-        margin: 0 5em;
-    }
-    @media (min-width: 1350px) {
-        margin: 0 12em;
+        display: flex;
     }
   `,
+
+  column: css`
+    display: block;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+  `
 };
 
 export default mixins;

@@ -1,25 +1,21 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-import { Header, media, Section, theme } from '@styles';
+import { Header, media, Section, theme, mixins } from '@styles';
 const { fontSizes } = theme;
 
 const InfoContainer = styled(Section)`
 `;
 
 const AboutRow = styled.div`
+    ${mixins.row};
     @media ${media.md} {
-        display: flex;
         flex-direction: row-reverse;
     }
-    align-items: center;
 `;
 
 const AboutColumn = styled.div`
-    display: block;
-    flex-basis: 0;
-    flex-grow: 1;
-    flex-shrink: 1;
+    ${mixins.column};
 `;
 
 const AboutImage = styled.div`
@@ -34,17 +30,6 @@ const AboutImage = styled.div`
 
 `;
 
-const AboutIntro = styled.div`
-    @media ${media.md} {
-        font-size: ${fontSizes.xs};
-    }
-    @media ${media.lg} {
-        font-size: ${fontSizes.sm};
-    }
-    @media ${media.xl} {
-        font-size: ${fontSizes.md};
-    }
-`;
 
 const About = () => (
     <InfoContainer id="about-info">
@@ -78,7 +63,7 @@ const About = () => (
                         </AboutColumn>
                         <AboutColumn>
                             <Header>About</Header>
-                            <AboutIntro dangerouslySetInnerHTML={{ __html: intro.intro }}></AboutIntro>
+                            <div dangerouslySetInnerHTML={{ __html: intro.intro }}></div>
                         </AboutColumn>
                     </AboutRow>
                 );

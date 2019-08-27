@@ -72,7 +72,7 @@ const Projects = () => (
                         type
                         slug
                         featuredImage {
-                          fluid {
+                          fluid(maxWidth: 900, quality: 90) {
                             srcSet
                             src
                             sizes

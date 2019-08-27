@@ -42,7 +42,7 @@ const Nav = styled.nav`
     width: 100%;
     font-family: ${fonts.HKGrotesk};
     z-index: 12;
-    margin: 1em 0;
+    margin: .5em 0;
 `;
 
 const NavLinks = styled.div`
