@@ -24,6 +24,7 @@ const ProjectHeader = styled.div`
     @media ${media.md} {
         padding: 8em 0 4em;
     }
+    padding-top: 5em;
 `;
 
 const ProjectInfo = styled.div`
@@ -46,16 +47,16 @@ const InfoRow = styled.div`
 const LeftColumn = styled.div`
   ${mixins.column};
     @media ${media.md} {
-      padding-right: 2rem;
+      padding-right: 2em;
       margin: 0;
     }
-    margin-bottom: 1rem;
+    margin-bottom: 1em;
 `;
 
 const RightColumn = styled.div`
    ${mixins.column};
     @media ${media.md} {
-      padding-left: 2rem;
+      padding-left: 2em;
     }
 `;
 
@@ -204,14 +205,14 @@ const Project = ({ data }) => {
                 target="_blank"
                 rel="nofollow noopener noreferrer"
                 aria-label="Gitlab Link">
-                <FontAwesomeIcon icon={["fab", "gitlab"]} />
+                <FontAwesomeIcon icon={["fab", "gitlab"]} style={{ color: colors.darkGrey }} />
               </IconLink>}
             {external && <IconLink
                 href={external}
                 target="_blank"
                 rel="nofollow noopener noreferrer"
                 aria-label="External Link">
-                <FontAwesomeIcon icon="external-link-alt" />
+                <FontAwesomeIcon icon="external-link-alt"  style={{ color: colors.darkGrey }} />
               </IconLink>}
 
           </RightColumn>

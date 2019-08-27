@@ -3,6 +3,8 @@
   Portfolio v1
 </h1>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/179e5e87-47d9-47c7-87ca-fbe67e910580/deploy-status)](https://app.netlify.com/sites/vibrant-mestorf-d59694/deploys)
+
 My portfolio, built with Gatsby, Contentful, and Netlify.
 
 ## 🚀 Quick start
