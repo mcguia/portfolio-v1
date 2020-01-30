@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { graphql } from "gatsby"
 import Helmet from "react-helmet"
 import { CSSTransition, TransitionGroup } from "react-transition-group"
 import { Project, Footer } from "@components"

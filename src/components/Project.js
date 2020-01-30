@@ -256,6 +256,7 @@ const Project = ({ data }) => {
                 <FontAwesomeIcon
                   icon="external-link-alt"
                   style={{ color: colors.darkGrey }}
+                  size="sm"
                 />
               </IconLink>
             )}
