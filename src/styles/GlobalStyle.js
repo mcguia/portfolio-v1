@@ -165,7 +165,7 @@ const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         font-family: ${fonts.Lato};
         color: #212121;
-        line-height: 2;
+        line-height: 1.8;
         overflow: hidden;
 
         @media ${media.md} {

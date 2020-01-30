@@ -80,7 +80,7 @@ const Experience = () => (
         return (
           <ExpRow>
             <ExpColumn>
-              <Header style={{ marginTop: "-0.5em" }}>Experience</Header>
+              <Header>Experience</Header>
             </ExpColumn>
             <ExpColumn>
               {Exps.map(({ node: exp }) => (

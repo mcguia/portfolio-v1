@@ -24,6 +24,10 @@ const SkillsColumn = styled.div`
 
 const SkillsBlock = styled.div`
   margin-bottom: 2em;
+
+  &:first-child {
+    margin-top: 1.3rem;
+  }
 `
 
 const SkillsTitle = styled.h4`
@@ -76,7 +80,7 @@ const Skills = () => (
         <SkillsContainer id="Skills">
           <SkillsRow>
             <SkillsColumn>
-              <Header style={{ marginTop: "-0.5em" }}>Development</Header>
+              <Header>Development</Header>
             </SkillsColumn>
             <SkillsColumn>
               {Devs.map(({ node: dev }) => (
@@ -90,7 +94,7 @@ const Skills = () => (
 
           <SkillsRow>
             <SkillsColumn>
-              <Header style={{ marginTop: "-0.5em" }}>Design</Header>
+              <Header>Design</Header>
             </SkillsColumn>
             <SkillsColumn>
               <SkillsBlock>

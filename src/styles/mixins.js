@@ -16,7 +16,6 @@ const mixins = {
   `,
 
   row: css`
-    align-items: center;
     @media ${media.md} {
       display: flex;
     }
