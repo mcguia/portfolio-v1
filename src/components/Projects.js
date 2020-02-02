@@ -103,11 +103,18 @@ const Projects = () => (
                           fluid={project.featuredImage.fluid}
                           imgStyle={{ position: "relative" }}
                         />
-                        <Description>
-                          <ProjectType>{project.type}</ProjectType>
-                          <ProjectName>{project.title}</ProjectName>
-                        </Description>
                       </Link>
+                      <Description>
+                        <ProjectType>{project.type}</ProjectType>
+                        <ProjectName>
+                          <Link
+                            to={`/project/${project.slug}`}
+                            className="link__highlight"
+                          >
+                            {project.title}
+                          </Link>
+                        </ProjectName>
+                      </Description>
                     </ProjectsColumn>
                     <ProjectsColumn />
                   </ProjectsRow>

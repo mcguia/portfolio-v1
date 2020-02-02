@@ -186,8 +186,40 @@ const GlobalStyle = createGlobalStyle`
         cursor: pointer;
     }
 
-    &:hover,
-    &:focus  {
+    a.link__highlight:before,
+    a.link__underline:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        left: 0;
+        transform-origin: bottom left;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transition: all 0.2s ease-in-out 0s;
+        transition: all 0.2s ease-in-out 0s;
+    }
+
+    a.link__underline:before {
+        height: 2px;
+        top: calc(50% + 0.70em);
+        background-color: ${colors.lightGrey};
+    }
+
+    a.link__highlight:before {
+        z-index: -1;
+        height: 100%;
+        top: 0;
+        background-color: ${colors.yellow};
+    }
+
+    a.link__highlight:hover:before,
+    a.link__underline:hover:before {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+    }
+
+    a.link__underline:hover,
+    a.link__underline:focus  {
         color: ${colors.darkGrey};
     }
 

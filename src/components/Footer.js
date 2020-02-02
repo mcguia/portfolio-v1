@@ -73,7 +73,9 @@ const Footer = () => (
         <FooterContainer id="footer">
           {isMounted && (
             <Logo>
-              <Link to={"/"}>Austin McGuire</Link>
+              <Link to={"/"} className="link__underline">
+                Austin McGuire
+              </Link>
             </Logo>
           )}
           {isMounted && (
@@ -83,6 +85,7 @@ const Footer = () => (
                   <FooterListItem key={social.id}>
                     <a
                       href={social.url}
+                      class="link__underline"
                       target="_blank"
                       rel="noopener noreferrer"
                       alt={social.name}

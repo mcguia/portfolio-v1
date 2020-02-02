@@ -19,9 +19,13 @@ const NavContainer = styled(Headroom)`
     @media ${media.xl} {
       padding: 0 9.375em;
     }
-  }
-  .headroom--pinned {
-    background: #fff;
+
+    &--pinned {
+      background: #fff;
+      -webkit-box-shadow: 0px 10px 11px -5px rgba(0, 0, 0, 0.05);
+      -moz-box-shadow: 0px 10px 11px -5px rgba(0, 0, 0, 0.05);
+      box-shadow: 0px 10px 11px -5px rgba(0, 0, 0, 0.05);
+    }
   }
 
   position: absolute;
@@ -122,6 +126,7 @@ class Navbar extends Component {
                         <Link
                           to={link}
                           activeStyle={{ color: `${colors.darkGrey}` }}
+                          className="link__underline"
                         >
                           {name}
                         </Link>
