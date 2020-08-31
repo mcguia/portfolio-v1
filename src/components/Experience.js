@@ -22,7 +22,8 @@ const ExpBlock = styled.div`
 
 const ExpTitle = styled.h4`
   font-weight: 600;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 
   @media ${media.lg} {
     font-size: ${fontSizes.md};
@@ -31,7 +32,7 @@ const ExpTitle = styled.h4`
     font-size: ${fontSizes.lg};
   }
   font-size: ${fontSizes.sm};
-  line-height: 2;
+  line-height: 1.5;
 `
 
 const Company = styled.span`

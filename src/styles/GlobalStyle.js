@@ -201,7 +201,7 @@ const GlobalStyle = createGlobalStyle`
 
     a.link__underline:before {
         height: 2px;
-        top: calc(50% + 0.70em);
+        top: calc(50% + 0.69em);
         background-color: ${colors.lightGrey};
     }
 

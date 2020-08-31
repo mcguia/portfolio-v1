@@ -79,7 +79,6 @@ const RightColumn = styled.div`
 
 const ProjectType = styled.h2`
   color: ${colors.lightGrey};
-  margin: 0;
 
   @media ${media.md} {
     font-size: ${fontSizes.sm};

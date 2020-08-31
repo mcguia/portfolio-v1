@@ -85,7 +85,7 @@ const Footer = () => (
                   <FooterListItem key={social.id}>
                     <a
                       href={social.url}
-                      class="link__underline"
+                      className="link__underline"
                       target="_blank"
                       rel="noopener noreferrer"
                       alt={social.name}
