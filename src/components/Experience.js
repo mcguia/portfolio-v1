@@ -89,7 +89,7 @@ const Experience = () => (
                   <ExpTitle>
                     <span>{exp.title}</span>
                     <Company>
-                      <span>&nbsp;@&nbsp;</span>
+                      {exp.company && <span>&nbsp;@&nbsp;</span>}
                       <span>{exp.company}</span>
                     </Company>
                   </ExpTitle>
