@@ -9,9 +9,9 @@ import Projects from "../components/Projects"
 import Skills from "../components/Skills"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons"
-import { faGitlab } from "@fortawesome/free-brands-svg-icons"
+import { faGithub } from "@fortawesome/free-brands-svg-icons"
 
-library.add(faExternalLinkAlt, faGitlab)
+library.add(faExternalLinkAlt, faGithub)
 
 export {
   About,

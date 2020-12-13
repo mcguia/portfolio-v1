@@ -183,7 +183,7 @@ const Project = ({ data }) => {
     type,
     startDate,
     endDate,
-    gitlab,
+    github,
     external,
     featuredInfo,
     technologies,
@@ -197,6 +197,7 @@ const Project = ({ data }) => {
   if (endDate) {
     date2 = new Date(endDate)
   }
+  console.log(github)
 
   return (
     <ProjectContainer id="project">
@@ -232,15 +233,15 @@ const Project = ({ data }) => {
                 "–" + months[date2.getMonth()] + " " + date2.getFullYear()}
             </InfoText>
             <Stripe />
-            {gitlab && (
+            {github && (
               <IconLink
-                href={gitlab}
+                href={github}
                 target="_blank"
                 rel="nofollow noopener noreferrer"
-                aria-label="Gitlab Link"
+                aria-label="Github Link"
               >
                 <FontAwesomeIcon
-                  icon={["fab", "gitlab"]}
+                  icon={["fab", "github"]}
                   style={{ color: colors.darkGrey }}
                 />
               </IconLink>

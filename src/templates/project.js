@@ -51,7 +51,7 @@ export const PageQuery = graphql`
       type
       startDate
       endDate
-      gitlab
+      github
       external
       slug
       featuredInfo
