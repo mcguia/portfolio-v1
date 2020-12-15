@@ -197,7 +197,6 @@ const Project = ({ data }) => {
   if (endDate) {
     date2 = new Date(endDate)
   }
-  console.log(github)
 
   return (
     <ProjectContainer id="project">

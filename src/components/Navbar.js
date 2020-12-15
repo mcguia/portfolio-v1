@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import { CSSTransition, TransitionGroup } from "react-transition-group"
 import Headroom from "react-headroom"
 import styled from "styled-components"
-import { theme, media } from "@styles"
+import { theme, media, mixins } from "@styles"
 import logo from "@images/logo.png"
 const { colors, fontSizes, fonts } = theme
 
@@ -14,17 +14,14 @@ const NavContainer = styled(Headroom)`
       padding: 0 3em;
     }
     @media ${media.lg} {
-      padding: 0 5em;
+      padding: 0 6em;
     }
     @media ${media.xl} {
-      padding: 0 9.375em;
+      padding: 0 12em;
     }
 
     &--pinned {
-      background: #fff;
-      -webkit-box-shadow: 0px 10px 11px -5px rgba(0, 0, 0, 0.05);
-      -moz-box-shadow: 0px 10px 11px -5px rgba(0, 0, 0, 0.05);
-      box-shadow: 0px 10px 11px -5px rgba(0, 0, 0, 0.05);
+      background: #f4f4f4;
     }
   }
 

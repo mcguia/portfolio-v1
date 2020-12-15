@@ -165,6 +165,7 @@ const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         font-family: ${fonts.Lato};
         color: #212121;
+        background-color: #f4f4f4;
         line-height: 1.8;
         overflow: hidden;
 
@@ -221,6 +222,12 @@ const GlobalStyle = createGlobalStyle`
     a.link__underline:hover,
     a.link__underline:focus  {
         color: ${colors.darkGrey};
+    }
+
+    ::selection {
+        background-color: #fff;
+        color: ${colors.yellow};
+        text-shadow: none;
     }
 
     ul, ol {

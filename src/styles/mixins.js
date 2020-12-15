@@ -8,10 +8,10 @@ const mixins = {
       margin: 0 3em;
     }
     @media ${media.lg} {
-      margin: 0 5em;
+      margin: 0 6em;
     }
     @media ${media.xl} {
-      margin: 0 9.375em;
+      margin: 0 12em;
     }
   `,
 
