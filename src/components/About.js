@@ -1,7 +1,9 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
-import { Header, media, Section, mixins } from "@styles"
+import Img from "gatsby-image"
+import { Header, media, Section, mixins, theme } from "@styles"
+const { fontSizes } = theme
 
 const InfoContainer = styled(Section)``
 
@@ -16,7 +18,27 @@ const AboutColumn = styled.div`
   ${mixins.column};
 `
 
-const AboutImage = styled.div`
+const IntroShort = styled.div`
+  width: 100%;
+  margin-bottom: 4rem;
+  font-weight: 600;
+  @media ${media.lg} {
+    font-size: ${fontSizes.md};
+  }
+  @media ${media.xl} {
+    font-size: ${fontSizes.lg};
+  }
+  font-size: ${fontSizes.sm};
+  @media ${media.lg} {
+    width: 66%;
+  }
+`
+
+const IntroColumn = styled(AboutColumn)`
+  align-self: flex-end;
+`
+
+const AboutPixel = styled.div`
   @media ${media.xl} {
     background-image: url(${props => props.image1});
     min-height: 560px;
@@ -33,8 +55,18 @@ const About = () => (
       query={graphql`
         query AboutInfoQuery {
           contentfulAbout {
+            introShort {
+              introShort
+            }
             intro {
               intro
+            }
+            me {
+              fluid(maxWidth: 900, quality: 90) {
+                srcSet
+                src
+                sizes
+              }
             }
             image1 {
               file {
@@ -50,18 +82,24 @@ const About = () => (
         }
       `}
       render={data => {
-        const { intro, image1, image2 } = data.contentfulAbout
+        const { introShort, intro, me, image1, image2 } = data.contentfulAbout
 
         return (
-          <AboutRow>
-            <AboutColumn>
-              <AboutImage image1={image1.file.url} image2={image2.file.url} />
-            </AboutColumn>
-            <AboutColumn>
-              <Header>About</Header>
-              <div dangerouslySetInnerHTML={{ __html: intro.intro }}></div>
-            </AboutColumn>
-          </AboutRow>
+          <div>
+            <IntroShort>
+              <div
+                dangerouslySetInnerHTML={{ __html: introShort.introShort }}
+              ></div>
+            </IntroShort>
+            <AboutRow>
+              <AboutColumn>
+                <Img fluid={me.fluid} imgStyle={{ position: "relative" }} />
+              </AboutColumn>
+              <IntroColumn>
+                <div dangerouslySetInnerHTML={{ __html: intro.intro }}></div>
+              </IntroColumn>
+            </AboutRow>
+          </div>
         )
       }}
     />

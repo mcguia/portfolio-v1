@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import { CSSTransition, TransitionGroup } from "react-transition-group"
 import Headroom from "react-headroom"
 import styled from "styled-components"
-import { theme, media, mixins } from "@styles"
+import { theme, media } from "@styles"
 import logo from "@images/logo.png"
 const { colors, fontSizes, fonts } = theme
 
