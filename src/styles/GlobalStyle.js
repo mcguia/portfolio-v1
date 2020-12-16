@@ -164,8 +164,8 @@ const GlobalStyle = createGlobalStyle`
         min-height: 100%;
         -webkit-font-smoothing: antialiased;
         font-family: ${fonts.Lato};
-        color: #212121;
-        background-color: #f4f4f4;
+        color: ${colors.darkGrey};
+        background-color: ${colors.bgLight};
         line-height: 1.8;
         overflow: hidden;
 
@@ -220,12 +220,17 @@ const GlobalStyle = createGlobalStyle`
     }
 
     a.link__underline:hover,
-    a.link__underline:focus  {
+    a.link__underline:focus,
+    a.link__underline-active  {
         color: ${colors.darkGrey};
     }
 
+    a.link__underline-active:before {
+        transform: scaleX(1);
+    }
+
     ::selection {
-        background-color: #fff;
+        background-color: ${colors.darkGrey};
         color: ${colors.yellow};
         text-shadow: none;
     }
@@ -248,7 +253,7 @@ const GlobalStyle = createGlobalStyle`
         font-weight: 600;
         -webkit-font-smoothing: antialiased;
         font-family: ${fonts.HKGrotesk};
-        color: #212121;
+        color: ${colors.darkGrey};
         line-height: 1.3;
     }
 

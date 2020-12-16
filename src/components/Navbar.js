@@ -21,7 +21,7 @@ const NavContainer = styled(Headroom)`
     }
 
     &--pinned {
-      background: #f4f4f4;
+      background: ${colors.bgLight};
     }
   }
 
@@ -121,8 +121,8 @@ class Navbar extends Component {
                         style={{ transitionDelay: `${i * 100}ms` }}
                       >
                         <Link
-                          to={link}
-                          activeStyle={{ color: `${colors.darkGrey}` }}
+                          to={`${link}/`}
+                          activeClassName="link__underline-active"
                           className="link__underline"
                         >
                           {name}

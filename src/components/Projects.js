@@ -26,20 +26,15 @@ const ProjectsColumn = styled.div`
 
 const Description = styled.div`
   justify-content: center;
-  padding: 2.5em 0 3em 0;
+  padding: 1em 0 3em 0;
 `
 
 const ProjectType = styled.h5`
   color: ${colors.lightGrey};
+  text-transform: uppercase;
+  font-weight: 500;
   margin: 0;
-
-  @media ${media.md} {
-    font-size: ${fontSizes.xs};
-  }
-  @media ${media.xl} {
-    font-size: ${fontSizes.sm};
-  }
-  font-size: ${fontSizes.xs};
+  font-size: 0.9rem;
 `
 
 const ProjectName = styled.h4`
@@ -67,7 +62,7 @@ const Projects = () => (
                 type
                 slug
                 featuredImage {
-                  fluid(maxWidth: 900, quality: 90) {
+                  fluid(maxWidth: 1000, quality: 90) {
                     srcSet
                     src
                     sizes

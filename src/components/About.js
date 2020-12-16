@@ -16,6 +16,9 @@ const AboutRow = styled.div`
 
 const AboutColumn = styled.div`
   ${mixins.column};
+  @media ${media.md} {
+    padding-right: 4rem;
+  }
 `
 
 const IntroShort = styled.div`

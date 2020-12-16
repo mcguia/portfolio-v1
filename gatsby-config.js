@@ -15,7 +15,7 @@ module.exports = {
     menuLinks: [
       {
         name: "work",
-        link: "/",
+        link: "",
       },
       {
         name: "about",
@@ -37,7 +37,7 @@ module.exports = {
         name: "Austin McGuire",
         short_name: "AustinMcGuire",
         start_url: "/",
-        background_color: "#ffffff",
+        background_color: "#f4f4f4",
         theme_color: "#b3b9c4",
         display: "minimal-ui",
         icon: "src/images/logo.png",
@@ -58,21 +58,13 @@ module.exports = {
           "/public/**/*.html": [
             "cache-control: public, max-age=0, must-revalidate",
           ],
-          "/*.css": [
-            "cache-control: public, max-age=31536000, immutable",
-          ],
-          "/*.js": [
-            "cache-control: public, max-age=31536000, immutable",
-          ],
-          "/sw.js": [
-            "cache-control: public, max-age=0, must-revalidate",
-          ],
+          "/*.css": ["cache-control: public, max-age=31536000, immutable"],
+          "/*.js": ["cache-control: public, max-age=31536000, immutable"],
+          "/sw.js": ["cache-control: public, max-age=0, must-revalidate"],
           "/public/page-data/*": [
             "cache-control: public, max-age=0, must-revalidate",
           ],
-          "/static/*": [
-            "cache-control: public, max-age=31536000, immutable",
-          ],
+          "/static/*": ["cache-control: public, max-age=31536000, immutable"],
         }, // option to add more headers. `Link` headers are transformed by the below criteria
         allPageHeaders: [], // option to add headers for all pages. `Link` headers are transformed by the below criteria
         mergeSecurityHeaders: true, // boolean to turn off the default security headers
