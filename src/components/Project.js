@@ -76,8 +76,22 @@ const RightColumn = styled.div`
     padding-left: 2em;
   }
 `
-
 const ProjectType = styled.h2`
+  color: ${colors.lightGrey};
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+
+  @media ${media.md} {
+    font-size: ${fontSizes.xs};
+  }
+  @media ${media.xl} {
+    font-size: ${fontSizes.sm};
+  }
+  font-size: ${fontSizes.xs};
+`
+
+const ProjectTitle = styled.h2`
   color: ${colors.lightGrey};
 
   @media ${media.md} {
@@ -93,13 +107,13 @@ const ProjectName = styled.h1`
   margin: 0;
 
   @media ${media.md} {
-    font-size: ${fontSizes.xl};
+    font-size: ${fontSizes.lg};
   }
   @media ${media.lg} {
-    font-size: ${fontSizes.xxl};
+    font-size: ${fontSizes.xl};
   }
   @media ${media.xl} {
-    font-size: ${fontSizes.xxxl};
+    font-size: ${fontSizes.xxl};
   }
   font-size: ${fontSizes.xl};
 `
@@ -218,14 +232,14 @@ const Project = ({ data }) => {
       <ProjectInfo>
         <InfoRow>
           <LeftColumn>
-            <ProjectType>The Project</ProjectType>
+            <ProjectTitle>The Project</ProjectTitle>
             <div dangerouslySetInnerHTML={{ __html: featuredInfo }}></div>
           </LeftColumn>
           <RightColumn>
-            <ProjectType>Technologies</ProjectType>
+            <ProjectTitle>Technologies</ProjectTitle>
             <InfoText>{tech}</InfoText>
             <Stripe />
-            <ProjectType>Date</ProjectType>
+            <ProjectTitle>Date</ProjectTitle>
             <InfoText>
               {months[date1.getMonth()] + " " + date1.getFullYear()}
               {endDate &&

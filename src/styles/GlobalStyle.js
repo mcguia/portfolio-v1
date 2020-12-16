@@ -230,7 +230,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     ::selection {
-        background-color: ${colors.darkGrey};
+        background-color: #fff;
         color: ${colors.yellow};
         text-shadow: none;
     }
