@@ -78,7 +78,6 @@ export default class PixiParticlesRenderer {
 
   _draw() {
     this.pointSystem.updateState()
-    this.pointSystem.render()
     this.animFrame = window.requestAnimationFrame(this._draw.bind(this))
   }
 

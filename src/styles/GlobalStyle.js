@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
         url(${fontFamilies.HKGroteskLightTTF}) format('truetype');
         font-weight: 300;
         font-style: normal;
-        font-display: auto;
+        font-display: swap;
     }
     @font-face {
         font-family: 'HK Grotesk';
@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
         url(${fontFamilies.HKGroteskLightItalicTTF}) format('truetype');
         font-weight: 300;
         font-style: italic;
-        font-display: auto;
+        font-display: swap;
     }
     @font-face {
         font-family: 'HK Grotesk';
@@ -30,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
         url(${fontFamilies.HKGroteskRegularTTF}) format('truetype');
         font-weight: normal;
         font-style: normal;
-        font-display: auto;
+        font-display: swap;
     }
     @font-face {
         font-family: 'HK Grotesk';
@@ -39,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
         url(${fontFamilies.HKGroteskRegularItalicTTF}) format('truetype');
         font-weight: normal;
         font-style: italic;
-        font-display: auto;
+        font-display: swap;
     }
     @font-face {
         font-family: 'HK Grotesk';
@@ -48,7 +48,7 @@ const GlobalStyle = createGlobalStyle`
         url(${fontFamilies.HKGroteskMediumTTF}) format('truetype');
         font-weight: 500;
         font-style: normal;
-        font-display: auto;
+        font-display: swap;
     }
     @font-face {
         font-family: 'HK Grotesk';
@@ -57,7 +57,7 @@ const GlobalStyle = createGlobalStyle`
         url(${fontFamilies.HKGroteskMediumItalicTTF}) format('truetype');
         font-weight: 500;
         font-style: italic;
-        font-display: auto;
+        font-display: swap;
     }
     @font-face {
         font-family: 'HK Grotesk';
@@ -66,7 +66,7 @@ const GlobalStyle = createGlobalStyle`
         url(${fontFamilies.HKGroteskBoldTTF}) format('truetype');
         font-weight: 600;
         font-style: normal;
-        font-display: auto;
+        font-display: swap;
     }
     @font-face {
         font-family: 'HK Grotesk';
@@ -75,7 +75,7 @@ const GlobalStyle = createGlobalStyle`
         url(${fontFamilies.HKGroteskBoldItalicTTF}) format('truetype');
         font-weight: 600;
         font-style: italic;
-        font-display: auto;
+        font-display: swap;
     }
     @font-face {
         font-family: 'Lato';
@@ -84,7 +84,7 @@ const GlobalStyle = createGlobalStyle`
         url(${fontFamilies.LatoRegularTTF}) format('truetype');
         font-weight: normal;
         font-style: normal;
-        font-display: auto;
+        font-display: swap;
     }
     @font-face {
         font-family: 'Lato';
@@ -93,7 +93,7 @@ const GlobalStyle = createGlobalStyle`
         url(${fontFamilies.LatoRegularItalicTTF}) format('truetype');
         font-weight: normal;
         font-style: italic;
-        font-display: auto;
+        font-display: swap;
     }
     @font-face {
         font-family: 'Lato';
@@ -102,7 +102,7 @@ const GlobalStyle = createGlobalStyle`
         url(${fontFamilies.LatoMediumTTF}) format('truetype');
         font-weight: 500;
         font-style: normal;
-        font-display: auto;
+        font-display: swap;
     }
     @font-face {
         font-family: 'Lato';
@@ -111,7 +111,7 @@ const GlobalStyle = createGlobalStyle`
         url(${fontFamilies.LatoMediumItalicTTF}) format('truetype');
         font-weight: 500;
         font-style: italic;
-        font-display: auto;
+        font-display: swap;
     }
     @font-face {
         font-family: 'Lato';
@@ -120,7 +120,7 @@ const GlobalStyle = createGlobalStyle`
         url(${fontFamilies.LatoSemiboldTTF}) format('truetype');
         font-weight: 600;
         font-style: normal;
-        font-display: auto;
+        font-display: swap;
     }
     @font-face {
         font-family: 'Lato';
@@ -129,21 +129,21 @@ const GlobalStyle = createGlobalStyle`
         url(${fontFamilies.LatoSemiboldItalicTTF}) format('truetype');
         font-weight: 600;
         font-style: italic;
-        font-display: auto;
+        font-display: swap;
     }
     @font-face {
         font-family: 'Apercu Regular';
         src: url(${fontFamilies.ApercuRegularOTF}) format('opentype');
         font-weight: regular;
         font-style: normal;
-        font-display: auto;
+        font-display: swap;
     }
     @font-face {
         font-family: 'Apercu Mono';
         src: url(${fontFamilies.ApercuMonoOTF}) format('opentype');
         font-weight: regular;
         font-style: normal;
-        font-display: auto;
+        font-display: swap;
     }
 
     html {
