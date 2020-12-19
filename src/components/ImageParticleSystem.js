@@ -1,5 +1,4 @@
 import { autoDetectRenderer, Graphics, Container } from "pixi.js"
-import { Ticker } from "@pixi/ticker"
 import Vector, { min, int } from "./Vector"
 import ImageParticle from "./ImageParticle"
 
@@ -23,10 +22,6 @@ export default class ImageParticleSystem {
 
     this.points = []
     this.pointSprites = []
-    this.ticker = new Ticker()
-    this.ticker.autoStart = false
-    this.ticker.maxFPS = 60
-    this.ticker.stop()
     this.renderer = autoDetectRenderer({
       width: this.width,
       height: this.height,
@@ -43,12 +38,6 @@ export default class ImageParticleSystem {
   _setup() {
     this.stage.addChild(this.container)
     this.canvasWrapper.appendChild(this.renderer.view)
-    this.ticker.start()
-    let test = this.renderer
-    let stage = this.stage
-    this.ticker.add(function(time) {
-      test.render(stage)
-    })
   }
 
   _calculateMousePos(event) {
