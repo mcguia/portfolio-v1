@@ -83,7 +83,7 @@ export default class PixiParticlesRenderer {
   }
 
   _draw() {
-    window.requestAnimationFrame(this._draw.bind(this))
+    this.animFrame = window.requestAnimationFrame(this._draw.bind(this))
     this.now = Date.now()
     this.elapsed = this.now - this.then
     if (this.elapsed > this.fpsInterval) {
