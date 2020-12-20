@@ -9,6 +9,7 @@ export default class PixiParticlesRenderer {
       REPULSION_CHANGE_DISTANCE: 200,
       WIDTH: 800,
       HEIGHT: 800,
+      FPS: 60,
     }
 
     // Override options
@@ -20,6 +21,11 @@ export default class PixiParticlesRenderer {
     this.canvasWrapper = element
     this.initialized = false
     this.destroyed = false
+    this.then = Date.now()
+    this.startTime = this.then
+    this.now = this.startTime
+    this.elapsed = 0
+    this.fpsInterval = 1000 / this.options.FPS
 
     this._createCanvas()
     this._preloadImage()
@@ -77,9 +83,14 @@ export default class PixiParticlesRenderer {
   }
 
   _draw() {
-    this.pointSystem.updateState()
-    this.pointSystem.render()
-    this.animFrame = window.requestAnimationFrame(this._draw.bind(this))
+    window.requestAnimationFrame(this._draw.bind(this))
+    this.now = Date.now()
+    this.elapsed = this.now - this.then
+    if (this.elapsed > this.fpsInterval) {
+      this.then = this.now - (this.elapsed % this.fpsInterval)
+      this.pointSystem.updateState()
+      this.pointSystem.render()
+    }
   }
 
   destroy() {
