@@ -1,4 +1,5 @@
 import About from "../components/About"
+import Contact from "../components/Contact"
 import Experience from "../components/Experience"
 import Footer from "../components/Footer"
 import Layout from "../components/Layout"
@@ -15,6 +16,7 @@ library.add(faExternalLinkAlt, faGithub)
 
 export {
   About,
+  Contact,
   Experience,
   Footer,
   Landing,

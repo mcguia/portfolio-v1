@@ -14,12 +14,16 @@ module.exports = {
     siteUrl: "https://austinmcguire.dev",
     menuLinks: [
       {
-        name: "work",
+        name: "Work",
         link: "",
       },
       {
-        name: "about",
+        name: "About",
         link: "/about",
+      },
+      {
+        name: "Contact",
+        link: "/contact",
       },
     ],
   },
