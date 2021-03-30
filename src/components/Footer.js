@@ -9,13 +9,12 @@ const FooterContainer = styled.div`
   width: 100%;
   padding: 4em 0;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   font-family: ${fonts.HKGrotesk};
 
   @media ${media.sm} {
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
   }
 `
@@ -72,13 +71,6 @@ const Footer = () => (
       return (
         <FooterContainer id="footer">
           {isMounted && (
-            <Logo>
-              <Link to={"/"} className="link__underline">
-                Austin McGuire
-              </Link>
-            </Logo>
-          )}
-          {isMounted && (
             <FooterLinks>
               <FooterList>
                 {Socials.map(({ node: social }) => (
@@ -90,7 +82,7 @@ const Footer = () => (
                       rel="noopener noreferrer"
                       alt={social.name}
                     >
-                      {social.name.toLowerCase()}
+                      {social.name}
                     </a>
                   </FooterListItem>
                 ))}

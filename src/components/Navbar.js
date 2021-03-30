@@ -63,18 +63,9 @@ const NavListItem = styled.li`
   color: ${colors.lightGrey};
 `
 
-const Logo = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: ${fontSizes.sm};
+const LogoType = styled(Link)`
+  font-size: 1.25rem;
   font-weight: 600;
-`
-
-const LogoImg = styled.img`
-  width: 50px;
-  height: auto;
-  vertical-align: middle;
 `
 
 class Navbar extends Component {
@@ -101,11 +92,7 @@ class Navbar extends Component {
           <TransitionGroup>
             {isMounted && (
               <CSSTransition classNames="fade" timeout={3000}>
-                <Logo style={{ transitionDelay: "100ms" }}>
-                  <Link to={"/"}>
-                    <LogoImg src={logo} aria-label="home" />
-                  </Link>
-                </Logo>
+                <LogoType className="link__underline" to={"/"}>Austin McGuire</LogoType>
               </CSSTransition>
             )}
           </TransitionGroup>

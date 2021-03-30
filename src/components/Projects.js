@@ -12,8 +12,14 @@ const ProjectsRow = styled.div`
   @media ${media.md} {
     display: flex;
   }
+  &:nth-child(odd) {
+    margin-right: 5em;
+  }
   &:nth-child(even) {
     flex-direction: row-reverse;
+  }
+  &:not(:first-child) {
+    margin-top: -12em;
   }
 `
 
@@ -22,6 +28,10 @@ const ProjectsColumn = styled.div`
   flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 1;
+`
+
+const ProjectsHeader = styled.div`
+  margin-bottom: 2em;
 `
 
 const Description = styled.div`
@@ -49,77 +59,84 @@ const ProjectName = styled.h4`
   font-size: ${fontSizes.md};
 `
 
-const Projects = () => (
-  <ProjectsContainer id="projects">
-    <StaticQuery
-      query={graphql`
-        query ProjectsQuery {
-          allContentfulProject {
-            edges {
-              node {
-                id
-                title
-                type
-                slug
-                featuredImage {
-                  fluid(maxWidth: 1000, quality: 90) {
-                    srcSet
-                    src
-                    sizes
+const Projects = () => {
+  const [isMounted, setIsMounted] = useState(false)
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsMounted(true), 2000)
+    return () => clearTimeout(timeout)
+  }, [])
+
+  return (
+    <ProjectsContainer id="projects">
+      {isMounted && (
+        <ProjectsHeader>
+          <span>Selected projects</span>
+        </ProjectsHeader>
+      )}
+      <StaticQuery
+        query={graphql`
+          query ProjectsQuery {
+            allContentfulProject {
+              edges {
+                node {
+                  id
+                  title
+                  type
+                  slug
+                  featuredImage {
+                    fluid(maxWidth: 1000, quality: 90) {
+                      srcSet
+                      src
+                      sizes
+                    }
                   }
                 }
               }
             }
           }
-        }
-      `}
-      render={data => {
-        const [isMounted, setIsMounted] = useState(false)
-        useEffect(() => {
-          const timeout = setTimeout(() => setIsMounted(true), 2000)
-          return () => clearTimeout(timeout)
-        }, [])
+        `}
+        render={data => {
+          const Projects = data.allContentfulProject.edges
 
-        const Projects = data.allContentfulProject.edges
-
-        return (
-          <TransitionGroup>
-            {isMounted &&
-              Projects.map(({ node: project }) => (
-                <CSSTransition
-                  classNames="fade"
-                  timeout={3000}
-                  key={project.id}
-                >
-                  <ProjectsRow>
-                    <ProjectsColumn>
-                      <Link to={`/project/${project.slug}`}>
-                        <Img
-                          fluid={project.featuredImage.fluid}
-                          imgStyle={{ position: "relative" }}
-                        />
-                      </Link>
-                      <Description>
-                        <ProjectType>{project.type}</ProjectType>
-                        <ProjectName>
-                          <Link
-                            to={`/project/${project.slug}`}
-                            className="link__highlight"
-                          >
-                            {project.title}
-                          </Link>
-                        </ProjectName>
-                      </Description>
-                    </ProjectsColumn>
-                    <ProjectsColumn />
-                  </ProjectsRow>
-                </CSSTransition>
-              ))}
-          </TransitionGroup>
-        )
-      }}
-    />
-  </ProjectsContainer>
-)
+          return (
+            <TransitionGroup>
+              {isMounted &&
+                Projects.map(({ node: project }) => (
+                  <CSSTransition
+                    classNames="fade"
+                    timeout={3000}
+                    key={project.id}
+                  >
+                    <ProjectsRow>
+                      <ProjectsColumn>
+                        <Link to={`/project/${project.slug}`}>
+                          <Img
+                            fluid={project.featuredImage.fluid}
+                            imgStyle={{ position: "relative" }}
+                          />
+                        </Link>
+                        <Description>
+                          <ProjectType>{project.type}</ProjectType>
+                          <ProjectName>
+                            <Link
+                              to={`/project/${project.slug}`}
+                              className="link__highlight"
+                            >
+                              {project.title}
+                            </Link>
+                          </ProjectName>
+                        </Description>
+                      </ProjectsColumn>
+                      <ProjectsColumn />
+                    </ProjectsRow>
+                  </CSSTransition>
+                ))}
+            </TransitionGroup>
+          )
+        }}
+      />
+    </ProjectsContainer>
+  )
+}
 
 export default Projects
