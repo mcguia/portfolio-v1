@@ -11,7 +11,7 @@ const mixins = {
       margin: 0 6em;
     }
     @media ${media.xl} {
-      margin: 0 12em;
+      margin: 0 9em;
     }
   `,
 

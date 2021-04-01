@@ -236,9 +236,10 @@ const GlobalStyle = createGlobalStyle`
     }
 
     ul, ol {
-        padding: 0;
-        margin: 0;
-        list-style: none;
+        p {
+            margin-block-start: 0!important;
+            margin-block-end: 0!important;
+        }
     }
 
     nav ul li a {

@@ -79,7 +79,7 @@ const RightColumn = styled.div`
 const ProjectType = styled.h2`
   color: ${colors.lightGrey};
   text-transform: uppercase;
-  font-weight: 500;
+  letter-spacing: 0.06rem;
   margin-bottom: 0.4rem;
 
   @media ${media.md} {
@@ -93,14 +93,9 @@ const ProjectType = styled.h2`
 
 const ProjectTitle = styled.h2`
   color: ${colors.lightGrey};
-
-  @media ${media.md} {
-    font-size: ${fontSizes.sm};
-  }
-  @media ${media.xl} {
-    font-size: ${fontSizes.md};
-  }
-  font-size: ${fontSizes.sm};
+  text-transform: uppercase;
+  letter-spacing: 0.06rem;
+  font-size: ${fontSizes.xs};
 `
 
 const ProjectName = styled.h1`
@@ -169,19 +164,21 @@ const options = {
   },
   renderNode: {
     [BLOCKS.EMBEDDED_ASSET]: node => {
-      const { title, description, file } = node.data.target.fields
-      const mimeType = file["en-US"].contentType
-      const mimeGroup = mimeType.split("/")[0]
+      if (node.data.target.fields) {
+        const { title, description, file } = node.data.target.fields
+        const mimeType = file["en-US"].contentType
+        const mimeGroup = mimeType.split("/")[0]
 
-      switch (mimeGroup) {
-        case "image":
-          return (
-            <StyledImg
-              title={title ? title["en-US"] : null}
-              alt={description ? description["en-US"] : null}
-              src={file["en-US"].url}
-            />
-          )
+        switch (mimeGroup) {
+          case "image":
+            return (
+              <StyledImg
+                title={title ? title["en-US"] : null}
+                alt={description ? description["en-US"] : null}
+                src={file["en-US"].url}
+              />
+            )
+        }
       }
     },
 
@@ -245,7 +242,7 @@ const Project = ({ data }) => {
               {endDate &&
                 "–" + months[date2.getMonth()] + " " + date2.getFullYear()}
             </InfoText>
-            <Stripe />
+            {(github || external) && <Stripe />}
             {github && (
               <IconLink
                 href={github}

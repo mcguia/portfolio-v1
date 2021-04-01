@@ -28,6 +28,7 @@ const FooterList = styled.ul`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  list-style: none;
 `
 
 const FooterListItem = styled.li`

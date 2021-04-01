@@ -5,11 +5,11 @@ export default class PixiParticlesRenderer {
   constructor(element, url, options) {
     this.options = {
       PADDING: 40,
-      PARTICLE_SIZE: 5,
+      PARTICLE_SIZE: 6,
       REPULSION_CHANGE_DISTANCE: 200,
       WIDTH: 800,
       HEIGHT: 800,
-      FPS: 60,
+      FPS: 80,
     }
 
     // Override options

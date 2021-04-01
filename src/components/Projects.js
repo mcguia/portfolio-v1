@@ -12,14 +12,16 @@ const ProjectsRow = styled.div`
   @media ${media.md} {
     display: flex;
   }
-  &:nth-child(odd) {
-    margin-right: 5em;
-  }
-  &:nth-child(even) {
-    flex-direction: row-reverse;
-  }
-  &:not(:first-child) {
-    margin-top: -12em;
+  @media ${media.md} {
+    &:not(:first-child) {
+      margin-top: -14vw;
+    }
+    &:nth-child(odd) {
+      margin-right: 5em;
+    }
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
   }
 `
 
@@ -31,6 +33,11 @@ const ProjectsColumn = styled.div`
 `
 
 const ProjectsHeader = styled.div`
+  color: ${colors.lightGrey};
+  text-transform: uppercase;
+  letter-spacing: 0.06rem;
+  font-weight: 600;
+  font-size: ${fontSizes.sm};
   margin-bottom: 2em;
 `
 
@@ -42,21 +49,22 @@ const Description = styled.div`
 const ProjectType = styled.h5`
   color: ${colors.lightGrey};
   text-transform: uppercase;
-  font-weight: 500;
+  letter-spacing: 0.06rem;
+  font-weight: 600;
   margin: 0;
-  font-size: 0.9rem;
+  font-size: ${fontSizes.xs};
 `
 
 const ProjectName = styled.h4`
   margin: 0;
 
   @media ${media.md} {
-    font-size: ${fontSizes.md};
-  }
-  @media ${media.xl} {
     font-size: ${fontSizes.lg};
   }
-  font-size: ${fontSizes.md};
+  @media ${media.xl} {
+    font-size: ${fontSizes.xl};
+  }
+  font-size: ${fontSizes.lg};
 `
 
 const Projects = () => {
@@ -70,18 +78,19 @@ const Projects = () => {
     <ProjectsContainer id="projects">
       {isMounted && (
         <ProjectsHeader>
-          <span>Selected projects</span>
+          <span>Selected work</span>
         </ProjectsHeader>
       )}
       <StaticQuery
         query={graphql`
           query ProjectsQuery {
-            allContentfulProject {
+            allContentfulProject(sort: { fields: order, order: ASC }) {
               edges {
                 node {
                   id
                   title
                   type
+                  order
                   slug
                   featuredImage {
                     fluid(maxWidth: 1000, quality: 90) {

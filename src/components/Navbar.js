@@ -4,7 +4,6 @@ import { CSSTransition, TransitionGroup } from "react-transition-group"
 import Headroom from "react-headroom"
 import styled from "styled-components"
 import { theme, media } from "@styles"
-import logo from "@images/logo.png"
 const { colors, fontSizes, fonts } = theme
 
 const NavContainer = styled(Headroom)`
@@ -17,7 +16,7 @@ const NavContainer = styled(Headroom)`
       padding: 0 6em;
     }
     @media ${media.xl} {
-      padding: 0 12em;
+      padding: 0 9em;
     }
 
     &--pinned {
@@ -41,7 +40,6 @@ const Nav = styled.nav`
   width: 100%;
   font-family: ${fonts.HKGrotesk};
   z-index: 12;
-  margin: 0.5em 0;
 `
 
 const NavLinks = styled.div`
@@ -53,6 +51,7 @@ const NavList = styled.ul`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  list-style: none;
 `
 
 const NavListItem = styled.li`
@@ -60,12 +59,11 @@ const NavListItem = styled.li`
   position: relative;
   font-size: ${fontSizes.sm};
   font-weight: 500;
-  color: ${colors.lightGrey};
 `
 
 const LogoType = styled(Link)`
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: ${fontSizes.sm};
+  font-weight: 500;
 `
 
 class Navbar extends Component {
@@ -92,7 +90,9 @@ class Navbar extends Component {
           <TransitionGroup>
             {isMounted && (
               <CSSTransition classNames="fade" timeout={3000}>
-                <LogoType className="link__underline" to={"/"}>Austin McGuire</LogoType>
+                <LogoType className="link__underline" to={"/"}>
+                  Austin McGuire
+                </LogoType>
               </CSSTransition>
             )}
           </TransitionGroup>
@@ -107,11 +107,7 @@ class Navbar extends Component {
                         key={i}
                         style={{ transitionDelay: `${i * 100}ms` }}
                       >
-                        <Link
-                          to={`${link}/`}
-                          activeClassName="link__underline-active"
-                          className="link__underline"
-                        >
+                        <Link to={`${link}/`} className="link__underline">
                           {name}
                         </Link>
                       </NavListItem>
