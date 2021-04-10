@@ -4,12 +4,12 @@ import ImageParticleSystem from "./ImageParticleSystem"
 export default class PixiParticlesRenderer {
   constructor(element, url, options) {
     this.options = {
-      PADDING: 40,
-      PARTICLE_SIZE: 6,
-      REPULSION_CHANGE_DISTANCE: 200,
-      WIDTH: 800,
-      HEIGHT: 800,
-      FPS: 80,
+      PADDING: 300,
+      PARTICLE_SIZE: 5,
+      REPULSION_CHANGE_DISTANCE: 100,
+      WIDTH: 1000,
+      HEIGHT: 1000,
+      FPS: 60,
     }
 
     // Override options

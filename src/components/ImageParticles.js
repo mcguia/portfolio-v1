@@ -13,7 +13,7 @@ const CanvasWrapper = styled.div`
   canvas {
     max-width: 100%;
     position: absolute;
-    top: 50%;
+    top: 85%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
   }
@@ -26,7 +26,7 @@ const CanvasWrapper = styled.div`
 
     canvas {
       max-width: 350%;
-      left: 0;
+      left: 55%;
     }
   }
 `
@@ -39,7 +39,15 @@ class ImageParticles extends Component {
   }
 
   componentDidMount() {
-    const { imageUrl, width, height, padding, size, repulsion } = this.props
+    const {
+      imageUrl,
+      width,
+      height,
+      padding,
+      size,
+      repulsion,
+      fps,
+    } = this.props
     if (PixiParticlesRenderer) {
       this.pixiParticles = new PixiParticlesRenderer(
         this.pixiCanvasWrapper.current,
@@ -50,6 +58,7 @@ class ImageParticles extends Component {
           PADDING: padding || 300,
           PARTICLE_SIZE: size || 3,
           REPULSION_CHANGE_DISTANCE: repulsion || 100,
+          FPS: fps || 60,
         }
       )
     }

@@ -15,13 +15,20 @@ export default class ImageParticle {
     this.originScale = originScale
     this.color = originColor
     this.sprite = null
+    this.isPhasing = false
+    this.alpha = 0
   }
 
   createSprite(texture) {
     this.sprite = new Sprite(texture)
     this.sprite.tint =
       (this.color[0] << 16) + (this.color[1] << 8) + this.color[2]
+    this.sprite.alpha = this.alpha
     return this.sprite
+  }
+
+  setPhasing() {
+    this.isPhasing = true
   }
 
   updateState(mouseX, mouseY) {
@@ -32,6 +39,17 @@ export default class ImageParticle {
       this.velocity.mult(0.95)
     }
     this.position.add(this.velocity.x, this.velocity.y)
+
+    if (this.isPhasing) {
+      if (this.alpha < 0.99) {
+        this.alpha += 0.01
+        this.sprite.alpha = this.alpha
+      } else {
+        this.isPhasing = false
+        this.alpha = 1
+        this.sprite.alpha = this.alpha
+      }
+    }
 
     this.sprite.position.x = this.position.x
     this.sprite.position.y = this.position.y

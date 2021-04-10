@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-portfolio",
+  "name": "portfolio-v1",
   "description": "Personal Portfolio v1",
   "version": "1.0.0",
   "author": "Austin McGuire <amcg10@gmail.com>",
@@ -49,6 +49,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/mcguia/gatsby-portfolio"
+    "url": "https://gitlab.com/mcguia/portfolio-v1"
   }
 }

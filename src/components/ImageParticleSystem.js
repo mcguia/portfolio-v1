@@ -19,6 +19,7 @@ export default class ImageParticleSystem {
     this.repulsionDistance = repulsionDistance
     this.width = width
     this.height = height
+    this.threshold = 0.99999999
 
     this.points = []
     this.pointSprites = []
@@ -153,6 +154,10 @@ export default class ImageParticleSystem {
     ) {
       const point = _step.value
       point.updateState(this.mouseX, this.mouseY)
+      if (Math.random() > this.threshold) point.setPhasing()
+    }
+    if (this.threshold > 0) {
+      this.threshold -= 0.00005
     }
   }
 

@@ -98,7 +98,14 @@ const Landing = () => (
               </TransitionGroup>
             </LeftColumn>
             <RightColumn>
-              <ImageParticles imageUrl={"smiley.png"} size="8" />
+              <ImageParticles
+                imageUrl={"twitmeportfolio.png"}
+                size={1}
+                height={1300}
+                width={1300}
+                fps={80}
+                padding={100}
+              />
             </RightColumn>
           </LandingRow>
         )
