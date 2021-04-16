@@ -154,7 +154,8 @@ export default class ImageParticleSystem {
     ) {
       const point = _step.value
       point.updateState(this.mouseX, this.mouseY)
-      if (Math.random() > this.threshold) point.setPhasing()
+      if (point.alpha === 0)
+        if (Math.random() > this.threshold) point.setPhasing()
     }
     if (this.threshold > 0) {
       this.threshold -= 0.00005
