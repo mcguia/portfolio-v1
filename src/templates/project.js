@@ -20,11 +20,7 @@ const ProjectPage = ({ data }) => {
 
   return (
     <ProjectContainer id="content">
-      <Helmet
-        title={
-          data.site.siteMetadata.title + " | " + data.contentfulProject.title
-        }
-      ></Helmet>
+      <Helmet title={data.contentfulProject.title}></Helmet>
       <TransitionGroup>
         {isMounted && (
           <CSSTransition classNames="fade" timeout={3000}>
