@@ -96,6 +96,9 @@ const ProjectTitle = styled.h2`
   text-transform: uppercase;
   letter-spacing: 0.06rem;
   font-size: ${fontSizes.xs};
+  @media ${media.md} {
+    font-size: ${fontSizes.sm};
+  }
 `
 
 const ProjectName = styled.h1`
@@ -121,7 +124,7 @@ const ProjectText = styled.p`
   margin-block-start: 1.5em;
   margin-block-end: 1.5em;
   @media ${media.md} {
-    font-size: ${fontSizes.xs};
+    font-size: ${fontSizes.sm};
   }
   @media ${media.lg} {
     font-size: ${fontSizes.sm};
@@ -135,13 +138,13 @@ const InfoText = styled.div`
   font-family: ${fonts.ApercuMono};
 
   @media ${media.md} {
-    font-size: ${fontSizes.xs};
+    font-size: ${fontSizes.sm};
   }
   @media ${media.lg} {
-    font-size: ${fontSizes.sm};
+    font-size: ${fontSizes.md};
   }
   @media ${media.xl} {
-    font-size: ${fontSizes.sm};
+    font-size: ${fontSizes.md};
   }
 `
 
@@ -274,7 +277,9 @@ const Project = ({ data }) => {
         </InfoRow>
       </ProjectInfo>
       {documentToReactComponents(mainContent.json, options)}
-      <Link to="/">Back to Home</Link>
+      <Link to="/" className="link__highlight">
+        Back to Home
+      </Link>
     </ProjectContainer>
   )
 }

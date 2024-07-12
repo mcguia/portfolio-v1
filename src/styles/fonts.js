@@ -44,6 +44,10 @@ import LatoSemiboldItalicWOFF2 from "@fonts/Lato/Lato-SemiboldItalic.woff2"
 
 import ApercuRegularOTF from "@fonts/Apercu/Apercu-Regular.otf"
 import ApercuMonoOTF from "@fonts/Apercu/Apercu-Mono.otf"
+import ApercuMonoProBoldTTF from "@fonts/Apercu/ApercuMonoProBold.ttf"
+import ApercuMonoProLightTTF from "@fonts/Apercu/ApercuMonoProLight.ttf"
+import ApercuMonoProMediumTTF from "@fonts/Apercu/ApercuMonoProMedium.ttf"
+import ApercuMonoProRegularTTF from "@fonts/Apercu/ApercuMonoProRegular.ttf"
 
 export {
   HKGroteskLightTTF,
@@ -90,4 +94,8 @@ export {
   LatoSemiboldItalicWOFF2,
   ApercuRegularOTF,
   ApercuMonoOTF,
+  ApercuMonoProBoldTTF,
+  ApercuMonoProLightTTF,
+  ApercuMonoProMediumTTF,
+  ApercuMonoProRegularTTF,
 }

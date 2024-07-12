@@ -52,7 +52,7 @@ const ProjectType = styled.h5`
   letter-spacing: 0.06rem;
   font-weight: 600;
   margin: 0;
-  font-size: ${fontSizes.xs};
+  font-size: ${fontSizes.sm};
 `
 
 const ProjectName = styled.h4`

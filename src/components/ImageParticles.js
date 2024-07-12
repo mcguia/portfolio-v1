@@ -7,7 +7,6 @@ try {
 
 const CanvasWrapper = styled.div`
   position: relative;
-  z-index: -5;
   height: 100%;
 
   canvas {

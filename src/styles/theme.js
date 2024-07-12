@@ -15,14 +15,14 @@ const theme = {
   },
 
   fontSizes: {
-    xxxl: "6rem",
-    xxl: "4rem",
-    xl: "2.5rem",
-    lg: "2rem",
-    md: "1.5rem",
-    sm: "1.25rem",
-    xs: "1rem",
-    xxs: "0.75rem",
+    xxxl: "5rem",
+    xxl: "3rem",
+    xl: "2rem",
+    lg: "1.5rem",
+    md: "1.25rem",
+    sm: "1rem",
+    xs: "0.75rem",
+    xxs: "0.6rem",
   },
 
   easing: "cubic-bezier(0.645, 0.045, 0.355, 1)",

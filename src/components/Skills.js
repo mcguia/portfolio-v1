@@ -33,6 +33,7 @@ const SkillsBlock = styled.div`
 const SkillsTitle = styled.h4`
   font-weight: 600;
   margin: 0;
+  margin-bottom: 1em;
 
   @media ${media.lg} {
     font-size: ${fontSizes.sm};

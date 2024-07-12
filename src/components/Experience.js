@@ -17,13 +17,13 @@ const ExpColumn = styled.div`
 `
 
 const ExpBlock = styled.div`
-  margin-bottom: 2em;
+  margin-bottom: 4em;
 `
 
 const ExpTitle = styled.h4`
-  font-weight: 600;
+  font-weight: 500;
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.7rem;
 
   @media ${media.lg} {
     font-size: ${fontSizes.md};
@@ -36,20 +36,20 @@ const ExpTitle = styled.h4`
 `
 
 const Company = styled.span`
-  font-weight: 500;
+  font-weight: 600;
 `
 const ExpDate = styled.div`
   font-family: ${fonts.ApercuMono};
   color: ${colors.lightGrey};
-  margin: -0.5em 0 0.5em 0;
+  margin: -0.5em 0 1em 0;
   @media ${media.md} {
     font-size: ${fontSizes.xs};
   }
   @media ${media.lg} {
-    font-size: ${fontSizes.sm};
+    font-size: 1rem;
   }
   @media ${media.xl} {
-    font-size: ${fontSizes.sm};
+    font-size: 1.1rem;
   }
 `
 

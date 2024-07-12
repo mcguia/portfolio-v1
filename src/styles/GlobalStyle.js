@@ -140,8 +140,29 @@ const GlobalStyle = createGlobalStyle`
     }
     @font-face {
         font-family: 'Apercu Mono';
-        src: url(${fontFamilies.ApercuMonoOTF}) format('opentype');
-        font-weight: regular;
+        src: url(${fontFamilies.ApercuMonoProLightTTF}) format('truetype');
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Apercu Mono';
+        src: url(${fontFamilies.ApercuMonoProRegularTTF}) format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Apercu Mono';
+        src: url(${fontFamilies.ApercuMonoProMediumTTF}) format('truetype');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Apercu Mono';
+        src: url(${fontFamilies.ApercuMonoProBoldTTF}) format('truetype');
+        font-weight: 600;
         font-style: normal;
         font-display: swap;
     }
@@ -165,19 +186,32 @@ const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         font-family: ${fonts.Lato};
         color: ${colors.darkGrey};
-        background-color: ${colors.bgLight};
         line-height: 1.8;
         overflow: hidden;
 
-        @media ${media.md} {
-            font-size: ${fontSizes.xs};
-        }
+        font-size: ${fontSizes.sm};
         @media ${media.lg} {
             font-size: ${fontSizes.sm};
         }
         @media ${media.xl} {
             font-size: ${fontSizes.md};
         }
+    }
+
+    .main-overlay {
+        background-color:hsla(26,39%,95%,1);
+        background-image:
+        radial-gradient(at 5% 96%, hsla(144,100%,92%,0.3) 0px, transparent 50%),
+        radial-gradient(at 45% 11%, hsla(36,100%,50%,0.1) 0px, transparent 50%),
+        radial-gradient(at 96% 4%, hsla(130,65%,86%,0.31) 0px, transparent 50%),
+        radial-gradient(at 87% 84%, hsla(21,100%,79%,0.1) 0px, transparent 50%),
+        radial-gradient(at 7% 13%, hsla(352,100%,79%,0.1) 0px, transparent 50%);
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
     }
 
     a {

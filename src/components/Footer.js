@@ -34,16 +34,8 @@ const FooterList = styled.ul`
 const FooterListItem = styled.li`
   margin: 0 0.8em 0 0;
   position: relative;
-  font-size: ${fontSizes.sm};
+  font-size: ${fontSizes.md};
   font-weight: 500;
-`
-
-const Logo = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: ${fontSizes.sm};
-  font-weight: 600;
 `
 
 const Footer = () => (

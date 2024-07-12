@@ -28,6 +28,7 @@ const Layout = ({ children }) => {
       `}
       render={({ site }) => (
         <Fragment>
+          <div class="main-overlay" />
           <div id="root">
             <Helmet
               title={site.siteMetadata.title}

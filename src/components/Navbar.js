@@ -18,10 +18,6 @@ const NavContainer = styled(Headroom)`
     @media ${media.xl} {
       padding: 0 9em;
     }
-
-    &--pinned {
-      background: ${colors.bgLight};
-    }
   }
 
   position: absolute;
@@ -57,12 +53,12 @@ const NavList = styled.ul`
 const NavListItem = styled.li`
   margin: 0 0.8em;
   position: relative;
-  font-size: ${fontSizes.sm};
+  font-size: ${fontSizes.md};
   font-weight: 500;
 `
 
 const LogoType = styled(Link)`
-  font-size: ${fontSizes.sm};
+  font-size: ${fontSizes.md};
   font-weight: 500;
 `
 
